@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp5g0sd7lsm0u"]
+
+[ext_resource type="Texture2D" uid="uid://bth6bu3lggnij" path="res://TEXTURE/SCORE.png" id="1_vmajl"]
+[ext_resource type="FontFile" uid="uid://cvh5ag78ds88y" path="res://TEXTURE/Minecraft.ttf" id="2_ubqyb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vmajl"]
+font = ExtResource("2_ubqyb")
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 241.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -6.8
+anchor_right = 1.0
+anchor_bottom = 10.174001
+offset_left = 2256.0
+offset_top = 185.0
+offset_right = -78.4375
+offset_bottom = -2219.934
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vmajl")
+
+[node name="Label" type="Label" parent="TextureRect"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 36.0
+offset_top = 22.0
+offset_right = 125.0
+offset_bottom = 38.0
+text = "REX LIES IN WAIT"
+label_settings = SubResource("LabelSettings_vmajl")

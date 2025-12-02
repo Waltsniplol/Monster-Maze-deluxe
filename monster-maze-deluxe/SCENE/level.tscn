@@ -1,0 +1,169 @@
+[gd_scene load_steps=11 format=3 uid="uid://drg1necyenax5"]
+
+[ext_resource type="Script" uid="uid://cymup6e7hhyak" path="res://addons/level_block/level_block_node.gd" id="1_gsvho"]
+[ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="2_rsdve"]
+[ext_resource type="Texture2D" uid="uid://cngh1aypsc3qw" path="res://TEXTURE/wall/wall_2_20251121111108.png" id="3_bdqi0"]
+[ext_resource type="PackedScene" uid="uid://v1wcx3dic5xd" path="res://SCENE/rex.tscn" id="4_c5pe8"]
+[ext_resource type="PackedScene" uid="uid://djtdq56hwmlie" path="res://SCENE/player.tscn" id="4_gsvho"]
+[ext_resource type="Shader" uid="uid://dnq0kpmhwljjo" path="res://SCRIPS/MENU.gdshader" id="5_rsdve"]
+[ext_resource type="PackedScene" uid="uid://cp5g0sd7lsm0u" path="res://SCENE/HUD.tscn" id="5_vbneo"]
+
+[sub_resource type="Environment" id="Environment_c5pe8"]
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.0
+ambient_light_energy = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vbneo"]
+shader = ExtResource("5_rsdve")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.0870000041325
+shader_parameter/scanlines_width = 0.026000001235
+shader_parameter/grille_opacity = 0.09200000437
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.0
+shader_parameter/roll_size = 7.34000034865
+shader_parameter/roll_variation = 0.27800000994512
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.0650000030875
+shader_parameter/noise_speed = 8.985
+shader_parameter/static_noise_intensity = 0.0810000038475
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 2.775
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.178000008455
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 1.5
+shader_parameter/vignette_opacity = 0.4450000211375
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_c5pe8"]
+
+[node name="LEVEL" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_c5pe8")
+
+[node name="blocks" type="Node3D" parent="."]
+
+[node name="LevelBlock" type="Node3D" parent="blocks"]
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("3_bdqi0")
+texture_size = 64.0
+east_face = 0
+south_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock2" type="Node3D" parent="blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("3_bdqi0")
+texture_size = 64.0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock7" type="Node3D" parent="blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("3_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock8" type="Node3D" parent="blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("3_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock9" type="Node3D" parent="blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("3_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock3" type="Node3D" parent="blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("3_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock4" type="Node3D" parent="blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("3_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock5" type="Node3D" parent="blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("3_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock6" type="Node3D" parent="blocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("3_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="Rex" parent="." instance=ExtResource("4_c5pe8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("4_gsvho")]
+
+[node name="Control2" parent="Player" instance=ExtResource("5_vbneo")]
+
+[node name="Control" type="Control" parent="Player"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 240.0
+
+[node name="ColorRect" type="ColorRect" parent="Player"]
+visible = false
+material = SubResource("ShaderMaterial_vbneo")
+offset_right = 320.0
+offset_bottom = 240.0
+mouse_filter = 2
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -2)
+navigation_mesh = SubResource("NavigationMesh_c5pe8")

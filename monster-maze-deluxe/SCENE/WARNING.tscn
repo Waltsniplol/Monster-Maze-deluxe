@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy3rl3ra76gtd"]
+
+[ext_resource type="FontFile" uid="uid://cvh5ag78ds88y" path="res://TEXTURE/Minecraft.ttf" id="1_qx8sc"]
+[ext_resource type="Script" uid="uid://noxaicn622d7" path="res://SCENE/warning.gd" id="1_tpb4s"]
+[ext_resource type="PackedScene" uid="uid://013jjwwo57i0" path="res://SCENE/vhs.tscn" id="2_bsdh7"]
+[ext_resource type="AudioStream" uid="uid://dryqgb1gcujbt" path="res://SONG/advertencia1.ogg" id="4_tpb4s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bsdh7"]
+font = ExtResource("1_qx8sc")
+font_size = 9
+stacked_outline_count = 1
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_tpb4s")
+
+[node name="fondo" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 232.0
+text = "WARNING
+
+This game contains intense flashing lights, 
+loud sounds, sudden jump scares, and other potentially distressing 
+content. If you have a history of heart conditions, epilepsy
+or are sensitive to flashing lights or loud noises, we strongly 
+advise that you do not play this game. Player discretion is strongly
+recommended, and anyone who feels unwell while playing
+should stop immediately.
+
+Good luck."
+label_settings = SubResource("LabelSettings_bsdh7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="vhs" parent="." instance=ExtResource("2_bsdh7")]
+visible = false
+layout_mode = 0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_tpb4s")
+autoplay = true
+panning_strength = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 1)

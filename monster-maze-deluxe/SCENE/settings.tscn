@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c6lw23jo0vn77"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 7.997
+anchor_bottom = 5.999
+offset_right = 0.11999512
+offset_bottom = 0.039993286
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 57.0
+offset_right = 297.0
+offset_bottom = 165.0
+text = "opciones"

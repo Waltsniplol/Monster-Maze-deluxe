@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=3 uid="uid://v1wcx3dic5xd"]
+
+[ext_resource type="Script" uid="uid://bxtdlhrh03pc8" path="res://rex.gd" id="1_moliv"]
+[ext_resource type="Texture2D" uid="uid://m8in66n1i417" path="res://TEXTURE/rex/rex1.png" id="2_an0j3"]
+[ext_resource type="Texture2D" uid="uid://cinfoq0et2hpu" path="res://TEXTURE/rex/rex2.png" id="3_mbx1r"]
+[ext_resource type="Texture2D" uid="uid://21p270jamvl" path="res://TEXTURE/rex/rex3.png" id="4_2twrn"]
+[ext_resource type="Texture2D" uid="uid://c8ormu45y32au" path="res://TEXTURE/rex/rex4.png" id="5_nme6n"]
+[ext_resource type="Texture2D" uid="uid://dbmj5wwiu8tbf" path="res://TEXTURE/rex/rex5.png" id="6_thout"]
+[ext_resource type="Texture2D" uid="uid://bol2sbdj3p4mq" path="res://TEXTURE/rex/rex6.png" id="7_uw2es"]
+[ext_resource type="Texture2D" uid="uid://wybmo33v7cpx" path="res://TEXTURE/rex/rex7.png" id="8_dpe5y"]
+[ext_resource type="Texture2D" uid="uid://cwawqq2y8mvmo" path="res://TEXTURE/rex/rex8.png" id="9_t866k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_moliv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_an0j3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mbx1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2twrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nme6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_thout")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uw2es")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dpe5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_t866k")
+}],
+"loop": true,
+"name": &"running",
+"speed": 9.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_moliv"]
+size = Vector3(1, 1, 0.02142334)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_moliv"]
+agent_height = 0.0
+
+[node name="Rex" type="CharacterBody3D"]
+script = ExtResource("1_moliv")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_moliv")
+animation = &"running"
+frame_progress = 0.18324018
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.011566162)
+shape = SubResource("BoxShape3D_moliv")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+navigation_mesh = SubResource("NavigationMesh_moliv")

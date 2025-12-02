@@ -1,0 +1,136 @@
+[gd_scene load_steps=17 format=3 uid="uid://djhygm5knisxk"]
+
+[ext_resource type="Script" uid="uid://b2xoqrlplurud" path="res://cinematic.gd" id="1_7aoes"]
+[ext_resource type="AudioStream" uid="uid://dx2lrcol4w0o4" path="res://SONG/payaso voz.ogg" id="2_aolvx"]
+[ext_resource type="Texture2D" uid="uid://cvo6nduk3uom2" path="res://TEXTURE/bg.png" id="3_peqth"]
+[ext_resource type="Texture2D" uid="uid://cnuusw3d76h53" path="res://TEXTURE/CORTINAS.png" id="4_aolvx"]
+[ext_resource type="Texture2D" uid="uid://chqmhgok3kf6j" path="res://TEXTURE/Project_20251120020701.png" id="4_ko4v7"]
+[ext_resource type="Texture2D" uid="uid://bh6ue4hl87av0" path="res://TEXTURE/e.png" id="5_ovyrs"]
+[ext_resource type="Texture2D" uid="uid://bp57u1ra6h275" path="res://TEXTURE/a.png" id="6_2umm7"]
+[ext_resource type="Texture2D" uid="uid://dxbyq8crirui3" path="res://TEXTURE/o.png" id="7_qsvt8"]
+[ext_resource type="Texture2D" uid="uid://ctaxd8b5o4vp5" path="res://TEXTURE/ENTER.png" id="8_kyos1"]
+[ext_resource type="Texture2D" uid="uid://nr17l5lkf3df" path="res://TEXTURE/EXIT.png" id="9_1wi0m"]
+[ext_resource type="Texture2D" uid="uid://dxymweh2ku3h" path="res://TEXTURE/text.png" id="10_dr5ay"]
+[ext_resource type="FontFile" uid="uid://cvh5ag78ds88y" path="res://TEXTURE/Minecraft.ttf" id="11_aiml5"]
+[ext_resource type="PackedScene" uid="uid://013jjwwo57i0" path="res://SCENE/vhs.tscn" id="12_w6ka1"]
+[ext_resource type="AudioStream" uid="uid://dpsh6rt7rcjhd" path="res://SONG/CLOWN.ogg" id="13_gff8o"]
+[ext_resource type="Texture2D" uid="uid://blf732rsd7xm1" path="res://TEXTURE/icons/icon.png" id="13_ko4v7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_um4nm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ko4v7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ovyrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2umm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qsvt8")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 12.0
+}]
+
+[node name="Cinematic" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 240.0
+script = ExtResource("1_7aoes")
+type_sound = ExtResource("2_aolvx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(12, 165)
+stream = ExtResource("2_aolvx")
+
+[node name="Bg" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(160, 120)
+texture = ExtResource("3_peqth")
+
+[node name="Cortinas" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(71, 65.00001)
+scale = Vector2(0.55078125, 0.55078125)
+texture = ExtResource("4_aolvx")
+
+[node name="Cortinas2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(249.00002, 65.00001)
+scale = Vector2(0.55078125, 0.55078125)
+texture = ExtResource("4_aolvx")
+flip_h = true
+
+[node name="ClownSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(161, 95.07)
+scale = Vector2(0.145, 0.145)
+sprite_frames = SubResource("SpriteFrames_um4nm")
+animation = &"talking"
+frame = 1
+frame_progress = 0.54347265
+
+[node name="EnterButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 248.0
+offset_top = 132.0
+offset_right = 309.89474
+offset_bottom = 156.0
+texture_normal = ExtResource("8_kyos1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ExitButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 248.0
+offset_top = 106.0
+offset_right = 309.89478
+offset_bottom = 130.0
+texture_normal = ExtResource("9_1wi0m")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Text" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(160, 199)
+scale = Vector2(1.6, 1.1714287)
+texture = ExtResource("10_dr5ay")
+
+[node name="DialogueLabel" type="RichTextLabel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 56.0
+offset_top = 166.0
+offset_right = 266.0
+offset_bottom = 230.0
+theme_override_constants/line_separation = 0
+theme_override_fonts/normal_font = ExtResource("11_aiml5")
+theme_override_font_sizes/normal_font_size = 10
+text = "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(26.999998, 133)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("13_ko4v7")
+
+[node name="vhs" parent="." instance=ExtResource("12_w6ka1")]
+visible = false
+layout_mode = 0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_gff8o")
+autoplay = true
+panning_strength = 0.0

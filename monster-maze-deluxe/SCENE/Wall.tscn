@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbf1ugawy0gxj"]
+
+[ext_resource type="PackedScene" uid="uid://dkgr1fdl2aj2d" path="res://SCENE/Player.tscn" id="2_8attj"]
+
+[node name="MazeScene" type="Node3D"]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_8attj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0413773, 1.3691242, 0)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D"]
+use_collision = true
+size = Vector3(50, 0.1, 50)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node3D/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+size = Vector3(1, 2, 5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.9998928, -0.013913818, 0.0045765103, -0.0047105732, -0.009617777, 0.99994266, -0.013869004, -0.99985695, -0.0096822865, 0, 8.497393, 0)
+light_energy = 0.407
