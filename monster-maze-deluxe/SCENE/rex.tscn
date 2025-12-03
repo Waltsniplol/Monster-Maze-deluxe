@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=3 uid="uid://v1wcx3dic5xd"]
+[gd_scene load_steps=11 format=3 uid="uid://v1wcx3dic5xd"]
 
-[ext_resource type="Script" uid="uid://bxtdlhrh03pc8" path="res://rex.gd" id="1_moliv"]
 [ext_resource type="Texture2D" uid="uid://m8in66n1i417" path="res://TEXTURE/rex/rex1.png" id="2_an0j3"]
 [ext_resource type="Texture2D" uid="uid://cinfoq0et2hpu" path="res://TEXTURE/rex/rex2.png" id="3_mbx1r"]
 [ext_resource type="Texture2D" uid="uid://21p270jamvl" path="res://TEXTURE/rex/rex3.png" id="4_2twrn"]
@@ -43,13 +42,11 @@ animations = [{
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_moliv"]
-size = Vector3(1, 1, 0.02142334)
-
-[sub_resource type="NavigationMesh" id="NavigationMesh_moliv"]
-agent_height = 0.0
+size = Vector3(1, 1, 0.0214233)
 
 [node name="Rex" type="CharacterBody3D"]
-script = ExtResource("1_moliv")
+collision_layer = 2
+collision_mask = 2
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
@@ -57,14 +54,12 @@ script = ExtResource("1_moliv")
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_moliv")
 animation = &"running"
-frame_progress = 0.18324018
+frame_progress = 0.18324
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.011566162)
+[node name="Coll" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0115662)
 shape = SubResource("BoxShape3D_moliv")
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="Audios" type="Node3D" parent="."]
 
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-navigation_mesh = SubResource("NavigationMesh_moliv")
+[node name="Grunnidos" type="AudioStreamPlayer3D" parent="Audios"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://ce0h3ai1q2k3g"]
 
 [ext_resource type="Texture2D" uid="uid://c03x4exqse3v7" path="res://TEXTURE/fondo3.png" id="1_l5slf"]
-[ext_resource type="Script" uid="uid://c4gh6n23s3cpe" path="res://SCENE/MENU.gd" id="1_yc7lo"]
+[ext_resource type="Script" uid="uid://c4gh6n23s3cpe" path="res://SCRIPS/MENU.gd" id="1_yc7lo"]
 [ext_resource type="Texture2D" uid="uid://b0liwsv0la3qn" path="res://TEXTURE/logo.png" id="2_yc7lo"]
 [ext_resource type="Texture2D" uid="uid://vvhiuv078tdh" path="res://TEXTURE/DEMO.png" id="3_b2ojv"]
 [ext_resource type="Texture2D" uid="uid://46ce5nxlse2s" path="res://TEXTURE/SUNFISH3.png" id="4_ak2ii"]
@@ -9,69 +9,80 @@
 [ext_resource type="Texture2D" uid="uid://co4de2v0npiva" path="res://TEXTURE/play-pressed.png" id="5_ak2ii"]
 [ext_resource type="Texture2D" uid="uid://cy2mw2jqwy7bt" path="res://TEXTURE/ALPHA2.png" id="5_b2ojv"]
 [ext_resource type="Texture2D" uid="uid://qjb5epqnl56a" path="res://TEXTURE/settings.png" id="6_mog1l"]
-[ext_resource type="Script" uid="uid://dwluweh75sg54" path="res://SCENE/botones.gd" id="7_ak2ii"]
+[ext_resource type="Script" uid="uid://dwluweh75sg54" path="res://SCRIPS/botones.gd" id="7_ak2ii"]
 [ext_resource type="Texture2D" uid="uid://dhadoxov2kchb" path="res://TEXTURE/settings - pressed.png" id="7_rb8v5"]
 [ext_resource type="Texture2D" uid="uid://us00w17hb0x6" path="res://TEXTURE/quit.png" id="8_snuvf"]
 [ext_resource type="Texture2D" uid="uid://besmrf73dgwd4" path="res://TEXTURE/quit-pressed.png" id="9_ky3yc"]
 [ext_resource type="AudioStream" uid="uid://i3dm7560lsbf" path="res://SONG/new menu.ogg" id="15_ak2ii"]
-[ext_resource type="PackedScene" uid="uid://013jjwwo57i0" path="res://SCENE/vhs.tscn" id="15_mog1l"]
 [ext_resource type="AudioStream" uid="uid://3haqdxf1ulu6" path="res://SONG/hover.ogg" id="16_mog1l"]
+[ext_resource type="PackedScene" uid="uid://c6lw23jo0vn77" path="res://SCENE/settings.tscn" id="17_rb8v5"]
 
-[node name="Main menu" type="Node2D"]
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_yc7lo")
 
-[node name="Fondo3" type="Sprite2D" parent="."]
+[node name="Fondo" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fondo" type="Sprite2D" parent="Fondo"]
 texture_filter = 1
 position = Vector2(160, 120)
 texture = ExtResource("1_l5slf")
 
-[node name="Logo" type="Sprite2D" parent="."]
+[node name="Logo" type="Sprite2D" parent="Fondo"]
 texture_filter = 1
 position = Vector2(242, 46)
 texture = ExtResource("2_yc7lo")
 
-[node name="Sunfish3" type="Sprite2D" parent="."]
+[node name="Sunfish3" type="Sprite2D" parent="Fondo"]
 texture_filter = 1
 position = Vector2(285.38, 87.385)
-scale = Vector2(0.6086956, 0.6086956)
+scale = Vector2(0.608696, 0.608696)
 texture = ExtResource("4_ak2ii")
 
-[node name="Demo" type="Sprite2D" parent="."]
+[node name="Demo" type="Sprite2D" parent="Fondo"]
 texture_filter = 1
-position = Vector2(200.99998, 76)
-scale = Vector2(0.40123457, 0.40123457)
+position = Vector2(201, 76)
+scale = Vector2(0.401235, 0.401235)
 texture = ExtResource("3_b2ojv")
 
-[node name="Alpha2" type="Sprite2D" parent="."]
+[node name="Alpha2" type="Sprite2D" parent="Fondo"]
 texture_filter = 1
 position = Vector2(242.614, 79.03)
-scale = Vector2(0.71153843, 0.71153843)
+scale = Vector2(0.711538, 0.711538)
 texture = ExtResource("5_b2ojv")
 
-[node name="Control" type="Control" parent="."]
+[node name="Menu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 320.0
 offset_bottom = 240.0
 script = ExtResource("7_ak2ii")
 
-[node name="hover_player" type="AudioStreamPlayer2D" parent="Control"]
+[node name="hover_player" type="AudioStreamPlayer2D" parent="Menu"]
 stream = ExtResource("16_mog1l")
 panning_strength = 0.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="Botones" type="VBoxContainer" parent="Menu"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.05
 anchor_top = 0.467
-anchor_right = 0.82800007
-anchor_bottom = 0.91700006
+anchor_right = 0.828
+anchor_bottom = 0.917
 offset_left = -16.0
-offset_top = 5.919998
-offset_right = 0.039978027
-offset_bottom = 12.919983
+offset_top = 5.92
+offset_right = 0.039978
+offset_bottom = 12.92
 
-[node name="Play" type="TextureButton" parent="Control/VBoxContainer"]
+[node name="Play" type="TextureButton" parent="Menu/Botones"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 0
@@ -79,27 +90,28 @@ size_flags_vertical = 4
 texture_normal = ExtResource("4_rfcui")
 texture_pressed = ExtResource("5_ak2ii")
 
-[node name="Settings" type="TextureButton" parent="Control/VBoxContainer"]
+[node name="Settings" type="TextureButton" parent="Menu/Botones"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 0
 texture_normal = ExtResource("6_mog1l")
 texture_pressed = ExtResource("7_rb8v5")
 
-[node name="Quit" type="TextureButton" parent="Control/VBoxContainer"]
+[node name="Quit" type="TextureButton" parent="Menu/Botones"]
 texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 0
 texture_normal = ExtResource("8_snuvf")
 texture_pressed = ExtResource("9_ky3yc")
 
-[node name="vhs" parent="." instance=ExtResource("15_mog1l")]
+[node name="Settings" parent="." instance=ExtResource("17_rb8v5")]
 visible = false
+layout_mode = 1
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Musica" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_ak2ii")
 autoplay = true
 
-[connection signal="pressed" from="Control/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Menu/Botones/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/Botones/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/Botones/Quit" to="." method="_on_quit_pressed"]

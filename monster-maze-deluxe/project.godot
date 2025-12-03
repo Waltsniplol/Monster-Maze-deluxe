@@ -12,12 +12,13 @@ config_version=5
 
 config/name="MONSTER MAZE DELUXE"
 run/main_scene="uid://dy3rl3ra76gtd"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://blf732rsd7xm1"
 
 [autoload]
 
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GLOBAL="*res://Global.gd"
+VHS="*res://SCENE/vhs.tscn"
 
 [dialogue_manager]
 
@@ -27,12 +28,11 @@ runtime/balloon_path="res://Dialogues/balloon.tscn"
 
 window/size/viewport_width=320
 window/size/viewport_height=240
-window/size/mode=4
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/level_block/plugin.cfg")
+enabled=PackedStringArray("res://addons/level_block/plugin.cfg")
 
 [input]
 
@@ -56,10 +56,6 @@ right={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
 ]
 }
-
-[internationalization]
-
-locale/translations_pot_files=PackedStringArray("res://untitled.dialogue")
 
 [rendering]
 

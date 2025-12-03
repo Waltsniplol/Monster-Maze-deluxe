@@ -1,41 +1,38 @@
 [gd_scene load_steps=3 format=3 uid="uid://013jjwwo57i0"]
 
-[ext_resource type="Shader" uid="uid://dnq0kpmhwljjo" path="res://SCRIPS/MENU.gdshader" id="1_g2d57"]
+[ext_resource type="Shader" uid="uid://dnq0kpmhwljjo" path="res://SHADERS/MENU.gdshader" id="1_g2d57"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ae20f"]
 shader = ExtResource("1_g2d57")
 shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.298000014155
+shader_parameter/scanlines_opacity = 0.298
 shader_parameter/scanlines_width = 0.5
-shader_parameter/grille_opacity = 0.4800000228
+shader_parameter/grille_opacity = 0.48
 shader_parameter/resolution = Vector2(640, 480)
 shader_parameter/pixelate = false
 shader_parameter/roll = true
 shader_parameter/roll_speed = 1.0
-shader_parameter/roll_size = 5.366000254885
-shader_parameter/roll_variation = 0.47100001911262
-shader_parameter/distort_intensity = 0.0090000004275
-shader_parameter/noise_opacity = 0.12400000589
+shader_parameter/roll_size = 5.366
+shader_parameter/roll_variation = 0.471
+shader_parameter/distort_intensity = 0.009
+shader_parameter/noise_opacity = 0.124
 shader_parameter/noise_speed = 9.37
-shader_parameter/static_noise_intensity = 0.186000008835
-shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/static_noise_intensity = 0.186
+shader_parameter/aberration = 4.75e-08
 shader_parameter/brightness = 2.775
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 1.0
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 1.5
-shader_parameter/vignette_opacity = 0.1810000085975
+shader_parameter/vignette_opacity = 0.181
 
-[node name="vhs" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 320.0
-offset_bottom = 240.0
-mouse_filter = 2
-
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="VHS" type="ColorRect"]
+process_mode = 3
+z_index = 1
 material = SubResource("ShaderMaterial_ae20f")
-layout_mode = 0
-offset_right = 320.0
-offset_bottom = 240.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2

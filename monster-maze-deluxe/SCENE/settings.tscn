@@ -1,25 +1,112 @@
-[gd_scene format=3 uid="uid://c6lw23jo0vn77"]
+[gd_scene load_steps=2 format=3 uid="uid://c6lw23jo0vn77"]
 
-[node name="Control" type="Control"]
+[ext_resource type="Script" uid="uid://qm2ejo5lg42f" path="res://SCRIPS/settings.gd" id="1_vrtkc"]
+
+[node name="Settings" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrtkc")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="FONDO" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 7.997
-anchor_bottom = 5.999
-offset_right = 0.11999512
-offset_bottom = 0.039993286
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.314316, 0.314316, 0.314316, 1)
+
+[node name="Volver" type="Button" parent="."]
+layout_mode = 0
+offset_right = 41.0
+offset_bottom = 36.0
+text = "X"
+
+[node name="Pistas" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="Musica" type="HSlider" parent="Pistas"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 37.0
+offset_top = 86.0
+offset_right = 286.0
+offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="Efectos" type="HSlider" parent="Pistas"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 37.5
+offset_top = 107.0
+offset_right = 287.5
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inputs" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="Izquierda" type="Button" parent="Inputs"]
 layout_mode = 0
-offset_left = 22.0
-offset_top = 57.0
-offset_right = 297.0
-offset_bottom = 165.0
-text = "opciones"
+offset_left = 161.0
+offset_top = 189.0
+offset_right = 207.0
+offset_bottom = 221.0
+text = "Izqu"
+
+[node name="Abajo" type="Button" parent="Inputs"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 189.0
+offset_right = 256.0
+offset_bottom = 221.0
+text = "Abaj"
+
+[node name="Arriba" type="Button" parent="Inputs"]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 153.0
+offset_right = 256.0
+offset_bottom = 185.0
+text = "Arri"
+
+[node name="Derecha" type="Button" parent="Inputs"]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 189.0
+offset_right = 305.0
+offset_bottom = 221.0
+text = "Dere"
+
+[node name="WinFull" type="CheckBox" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 173.0
+offset_right = 108.0
+offset_bottom = 227.0
+text = "Pantalla 
+Completa"
+
+[node name="VHS" type="CheckBox" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 145.0
+offset_right = 108.0
+offset_bottom = 176.0
+text = "VHS"
+
+[connection signal="pressed" from="Volver" to="." method="_on_volver_pressed"]

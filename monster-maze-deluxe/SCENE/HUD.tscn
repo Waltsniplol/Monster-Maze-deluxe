@@ -1,41 +1,108 @@
-[gd_scene load_steps=4 format=3 uid="uid://cp5g0sd7lsm0u"]
+[gd_scene load_steps=6 format=3 uid="uid://cp5g0sd7lsm0u"]
 
+[ext_resource type="Script" uid="uid://bmli8io0mtwe" path="res://SCRIPS/hud.gd" id="1_5jn2j"]
 [ext_resource type="Texture2D" uid="uid://bth6bu3lggnij" path="res://TEXTURE/SCORE.png" id="1_vmajl"]
 [ext_resource type="FontFile" uid="uid://cvh5ag78ds88y" path="res://TEXTURE/Minecraft.ttf" id="2_ubqyb"]
+[ext_resource type="PackedScene" uid="uid://c6lw23jo0vn77" path="res://SCENE/settings.tscn" id="4_5yg0y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vmajl"]
 font = ExtResource("2_ubqyb")
 font_size = 10
 font_color = Color(0, 0, 0, 1)
 
-[node name="Control" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 320.0
-offset_bottom = 241.0
+[node name="HUD" type="CanvasLayer"]
+process_mode = 3
+layer = 0
+script = ExtResource("1_5jn2j")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="IndRex" type="TextureRect" parent="."]
 texture_filter = 1
 clip_contents = true
-layout_mode = 1
 anchors_preset = -1
 anchor_left = -6.8
 anchor_right = 1.0
-anchor_bottom = 10.174001
+anchor_bottom = 10.174
 offset_left = 2256.0
 offset_top = 185.0
 offset_right = -78.4375
-offset_bottom = -2219.934
+offset_bottom = -2219.93
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_vmajl")
 
-[node name="Label" type="Label" parent="TextureRect"]
+[node name="Text" type="Label" parent="IndRex"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 36.0
-offset_top = 22.0
-offset_right = 125.0
-offset_bottom = 38.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 156.0
+offset_bottom = 34.0
 text = "REX LIES IN WAIT"
 label_settings = SubResource("LabelSettings_vmajl")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Game_Over" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Menu_Pausa" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fondo" type="ColorRect" parent="Menu_Pausa"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Botones" type="VBoxContainer" parent="Menu_Pausa"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -50.5
+offset_right = 42.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Reanudar" type="Button" parent="Menu_Pausa/Botones"]
+layout_mode = 2
+text = "Reanudar"
+
+[node name="Ajustes" type="Button" parent="Menu_Pausa/Botones"]
+layout_mode = 2
+text = "Ajustes"
+
+[node name="Salir" type="Button" parent="Menu_Pausa/Botones"]
+layout_mode = 2
+text = "Salir"
+
+[node name="Settings" parent="Menu_Pausa" instance=ExtResource("4_5yg0y")]
+visible = false
+layout_mode = 1
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Musica" type="AudioStreamPlayer" parent="Audio"]
+
+[node name="Jumpscare" type="AudioStreamPlayer" parent="Audio"]
+
+[connection signal="pressed" from="Menu_Pausa/Botones/Reanudar" to="." method="_on_reanudar_pressed"]
+[connection signal="pressed" from="Menu_Pausa/Botones/Ajustes" to="." method="_on_ajustes_pressed"]
+[connection signal="pressed" from="Menu_Pausa/Botones/Salir" to="." method="_on_salir_pressed"]

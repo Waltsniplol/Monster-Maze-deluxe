@@ -1,6 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://djhygm5knisxk"]
+[gd_scene load_steps=16 format=3 uid="uid://djhygm5knisxk"]
 
-[ext_resource type="Script" uid="uid://b2xoqrlplurud" path="res://cinematic.gd" id="1_7aoes"]
+[ext_resource type="Script" uid="uid://b2xoqrlplurud" path="res://SCRIPS/cinematic.gd" id="1_7aoes"]
 [ext_resource type="AudioStream" uid="uid://dx2lrcol4w0o4" path="res://SONG/payaso voz.ogg" id="2_aolvx"]
 [ext_resource type="Texture2D" uid="uid://cvo6nduk3uom2" path="res://TEXTURE/bg.png" id="3_peqth"]
 [ext_resource type="Texture2D" uid="uid://cnuusw3d76h53" path="res://TEXTURE/CORTINAS.png" id="4_aolvx"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://nr17l5lkf3df" path="res://TEXTURE/EXIT.png" id="9_1wi0m"]
 [ext_resource type="Texture2D" uid="uid://dxymweh2ku3h" path="res://TEXTURE/text.png" id="10_dr5ay"]
 [ext_resource type="FontFile" uid="uid://cvh5ag78ds88y" path="res://TEXTURE/Minecraft.ttf" id="11_aiml5"]
-[ext_resource type="PackedScene" uid="uid://013jjwwo57i0" path="res://SCENE/vhs.tscn" id="12_w6ka1"]
 [ext_resource type="AudioStream" uid="uid://dpsh6rt7rcjhd" path="res://SONG/CLOWN.ogg" id="13_gff8o"]
 [ext_resource type="Texture2D" uid="uid://blf732rsd7xm1" path="res://TEXTURE/icons/icon.png" id="13_ko4v7"]
 
@@ -49,64 +48,77 @@ offset_bottom = 240.0
 script = ExtResource("1_7aoes")
 type_sound = ExtResource("2_aolvx")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(12, 165)
-stream = ExtResource("2_aolvx")
+[node name="Fondo" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Bg" type="Sprite2D" parent="."]
+[node name="Bg" type="Sprite2D" parent="Fondo"]
 texture_filter = 1
 position = Vector2(160, 120)
 texture = ExtResource("3_peqth")
 
-[node name="Cortinas" type="Sprite2D" parent="."]
+[node name="Cortinas" type="Sprite2D" parent="Fondo"]
 texture_filter = 1
-position = Vector2(71, 65.00001)
-scale = Vector2(0.55078125, 0.55078125)
+position = Vector2(71, 65)
+scale = Vector2(0.550781, 0.550781)
 texture = ExtResource("4_aolvx")
 
-[node name="Cortinas2" type="Sprite2D" parent="."]
+[node name="Cortinas2" type="Sprite2D" parent="Fondo"]
 texture_filter = 1
-position = Vector2(249.00002, 65.00001)
-scale = Vector2(0.55078125, 0.55078125)
+position = Vector2(249, 65)
+scale = Vector2(0.550781, 0.550781)
 texture = ExtResource("4_aolvx")
 flip_h = true
 
-[node name="ClownSprite" type="AnimatedSprite2D" parent="."]
+[node name="ClownSprite" type="AnimatedSprite2D" parent="Fondo"]
 texture_filter = 1
 position = Vector2(161, 95.07)
 scale = Vector2(0.145, 0.145)
 sprite_frames = SubResource("SpriteFrames_um4nm")
 animation = &"talking"
 frame = 1
-frame_progress = 0.54347265
+frame_progress = 0.543473
 
-[node name="EnterButton" type="TextureButton" parent="."]
+[node name="Text" type="Sprite2D" parent="Fondo"]
+texture_filter = 1
+position = Vector2(160, 199)
+scale = Vector2(1.6, 1.17143)
+texture = ExtResource("10_dr5ay")
+
+[node name="Icon" type="Sprite2D" parent="Fondo"]
+texture_filter = 1
+position = Vector2(27, 133)
+scale = Vector2(0.19, 0.19)
+texture = ExtResource("13_ko4v7")
+
+[node name="Botones" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EnterButton" type="TextureButton" parent="Botones"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 248.0
 offset_top = 132.0
-offset_right = 309.89474
+offset_right = 309.895
 offset_bottom = 156.0
 texture_normal = ExtResource("8_kyos1")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="ExitButton" type="TextureButton" parent="."]
+[node name="ExitButton" type="TextureButton" parent="Botones"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 248.0
 offset_top = 106.0
-offset_right = 309.89478
+offset_right = 309.895
 offset_bottom = 130.0
 texture_normal = ExtResource("9_1wi0m")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="Text" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(160, 199)
-scale = Vector2(1.6, 1.1714287)
-texture = ExtResource("10_dr5ay")
 
 [node name="DialogueLabel" type="RichTextLabel" parent="."]
 texture_filter = 1
@@ -120,17 +132,6 @@ theme_override_fonts/normal_font = ExtResource("11_aiml5")
 theme_override_font_sizes/normal_font_size = 10
 text = "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 
-[node name="Icon" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(26.999998, 133)
-scale = Vector2(0.19, 0.19)
-texture = ExtResource("13_ko4v7")
-
-[node name="vhs" parent="." instance=ExtResource("12_w6ka1")]
-visible = false
-layout_mode = 0
-
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+[node name="MusicaRem" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_gff8o")
-autoplay = true
-panning_strength = 0.0
+bus = &"Musica"

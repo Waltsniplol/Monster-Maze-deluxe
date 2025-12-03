@@ -1,13 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://djtdq56hwmlie"]
 
-[ext_resource type="Script" uid="uid://ldicl4tc30q1" path="res://SCENE/jugador.gd" id="1_pvtcc"]
+[ext_resource type="Script" uid="uid://ldicl4tc30q1" path="res://SCRIPS/jugador.gd" id="1_pvtcc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pvtcc"]
+size = Vector3(0.0588379, 1, 0.516357)
 
 [sub_resource type="Animation" id="Animation_a2qa7"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
+tracks/0/path = NodePath("Camara:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -19,7 +22,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/path = NodePath("Camara:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -35,11 +38,11 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
+tracks/0/path = NodePath("Camara:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.2),
+"times": PackedFloat32Array(0, 0.0666667, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0.1, 0), Vector3(0, 0, 0)]
@@ -47,14 +50,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/path = NodePath("Camara:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.08726646), Vector3(0, 0, 0.008726646), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.0872665), Vector3(0, 0, 0.00872665), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_pvtcc"]
@@ -63,11 +66,11 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
+tracks/0/path = NodePath("Camara:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0.1, 0), Vector3(0, -0.1, 0), Vector3(0, 0, 0)]
@@ -80,29 +83,28 @@ _data = {
 &"headbob": SubResource("Animation_pvtcc")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_pvtcc"]
-size = Vector3(0.05883789, 1, 0.5163574)
-
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_pvtcc")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camara" type="Camera3D" parent="."]
 current = true
 fov = 90.0
 
-[node name="FrontRay" type="RayCast3D" parent="."]
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+
+[node name="Coll" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0404053, 0, -0.243042)
+shape = SubResource("BoxShape3D_pvtcc")
+
+[node name="RayCast" type="Node3D" parent="."]
+
+[node name="FrontRay" type="RayCast3D" parent="RayCast"]
 target_position = Vector3(0, 0, -2)
 
-[node name="BackRay" type="RayCast3D" parent="."]
+[node name="BackRay" type="RayCast3D" parent="RayCast"]
 target_position = Vector3(0, 0, 2)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_m0ta0")
 }
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040405273, 0, -0.24304199)
-shape = SubResource("BoxShape3D_pvtcc")
