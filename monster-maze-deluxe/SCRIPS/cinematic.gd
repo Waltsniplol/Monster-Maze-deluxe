@@ -4,24 +4,28 @@ extends Control
 @export var type_sound: AudioStream                   # sonido por letra (ogg)
 var type_sound_player: AudioStreamPlayer              # reproductor interno
 
-var lines = [
-	"Roll up! Roll up!",
-	"See the amazing Tyrannosaurus Rex, King of the Dinosaurs!",
-	"In his lair, perfectly preserved in silicon since prehistoric times!",
-	"Brought to you for your entertainment and exhilaration!",
-	"I am Gozo the Clown, a pleasure to meet you!",
-	"So… what do you say?",
-	"Are you ready to meet 'REX'?"
-]
-var current_line = 0
-var dialogue_finished = false
-var typing = false
-var is_bouncing = false   # controla el rebote del payaso
+const Dialogos : Dictionary = { #Lineas De Dialogos , Expreciones
+	0: 
+		[["Roll up! Roll up!",
+			"See the amazing Tyrannosaurus Rex, King of the Dinosaurs!",
+			"In his lair, perfectly preserved in silicon since prehistoric times!",
+			"Brought to you for your entertainment and exhilaration!",
+			"I am Gozo the Clown, a pleasure to meet you!",
+			"So… what do you say?",
+			"Are you ready to meet 'REX'?"]
+		,
+		["Tranquilo","Tranquilo","Tranquilo","Tranquilo","Tranquilo","Tranquilo","Tranquilo"]]
+}
 
-# Referencia al RichTextLabel
-var dialogue_label: RichTextLabel
-# Referencia al payaso AnimatedSprite2D
-var clown_sprite: AnimatedSprite2D
+var lines : Array #En que linea es que esta los
+var EmocPL : Array #Indica la emocion en Cada Sprite
+var current_line : int = 0
+var dialogue_finished : bool = false
+var typing : bool = false
+var is_bouncing : bool = false   # controla el rebote del payaso
+
+@onready var dialogue_label: RichTextLabel = $DialogueLabel
+@onready var clown_sprite: AnimatedSprite2D = $Fondo/ClownSprite
 
 # Variables para el rebote del payaso
 var clown_base_pos: Vector2
@@ -30,14 +34,11 @@ var clown_bounce_height: float = 1
 var clown_bounce_speed: float = 50
 
 func _ready():
-	# Obtener referencias
-	dialogue_label = $DialogueLabel
-	assert(dialogue_label != null, "No se encontró DialogueLabel")
-
-	clown_sprite = $Fondo/ClownSprite
+	lines = Dialogos[GLOBAL.MomHist][0]
+	EmocPL = Dialogos[GLOBAL.MomHist][1]
 	clown_sprite.scale = Vector2(0.145, 0.145)
 	clown_base_pos = clown_sprite.position
-	clown_sprite.play("idle")  # animación inicial
+	clown_sprite.play("idle_"+EmocPL[current_line])  # animación inicial
 
 	# Crear AudioStreamPlayer interno para el sonido por letra
 	if type_sound:
@@ -48,9 +49,6 @@ func _ready():
 
 	# Ocultar botones al inicio
 	$Botones.visible = false
-	$Botones/EnterButton.pressed.connect(Callable(self, "_on_enter_pressed"))
-	$Botones/ExitButton.pressed.connect(Callable(self, "_on_exit_pressed"))
-
 	# Mostrar la primera línea
 	await _type_line(lines[current_line])
 
@@ -62,7 +60,7 @@ func _input(event):
 				type_sound_player.stop()
 			typing = false
 			is_bouncing = false
-			clown_sprite.play("idle")
+			clown_sprite.play("idle_"+EmocPL[current_line])
 			# Mostrar toda la línea instantáneamente
 			dialogue_label.clear()
 			dialogue_label.add_text(lines[current_line])
@@ -75,13 +73,13 @@ func _input(event):
 				$Botones.visible = true
 				$Botones/EnterButton.visible = true
 				$Botones/ExitButton.visible = true
-				clown_sprite.play("idle")
+				clown_sprite.play("idle_"+EmocPL[current_line - 1])
 
 # Función typewriter letra por letra
 func _type_line(text: String) -> void:
 	typing = true
 	is_bouncing = true
-	clown_sprite.play("talking")
+	clown_sprite.play("talking_"+EmocPL[current_line])
 	dialogue_label.clear()
 
 	for letter in text:
@@ -103,7 +101,7 @@ func _type_line(text: String) -> void:
 
 	typing = false
 	is_bouncing = false
-	clown_sprite.play("idle")
+	clown_sprite.play("idle_"+EmocPL[current_line])
 
 func _on_enter_pressed() -> void:
 	get_tree().change_scene_to_file("res://SCENE/level.tscn")

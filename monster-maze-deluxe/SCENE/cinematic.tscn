@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" uid="uid://b2xoqrlplurud" path="res://SCRIPS/cinematic.gd" id="1_7aoes"]
 [ext_resource type="AudioStream" uid="uid://dx2lrcol4w0o4" path="res://SONG/payaso voz.ogg" id="2_aolvx"]
-[ext_resource type="Texture2D" uid="uid://cvo6nduk3uom2" path="res://TEXTURE/bg.png" id="3_peqth"]
-[ext_resource type="Texture2D" uid="uid://cnuusw3d76h53" path="res://TEXTURE/CORTINAS.png" id="4_aolvx"]
-[ext_resource type="Texture2D" uid="uid://chqmhgok3kf6j" path="res://TEXTURE/Project_20251120020701.png" id="4_ko4v7"]
-[ext_resource type="Texture2D" uid="uid://bh6ue4hl87av0" path="res://TEXTURE/e.png" id="5_ovyrs"]
-[ext_resource type="Texture2D" uid="uid://bp57u1ra6h275" path="res://TEXTURE/a.png" id="6_2umm7"]
-[ext_resource type="Texture2D" uid="uid://dxbyq8crirui3" path="res://TEXTURE/o.png" id="7_qsvt8"]
-[ext_resource type="Texture2D" uid="uid://ctaxd8b5o4vp5" path="res://TEXTURE/ENTER.png" id="8_kyos1"]
-[ext_resource type="Texture2D" uid="uid://nr17l5lkf3df" path="res://TEXTURE/EXIT.png" id="9_1wi0m"]
-[ext_resource type="Texture2D" uid="uid://dxymweh2ku3h" path="res://TEXTURE/text.png" id="10_dr5ay"]
-[ext_resource type="FontFile" uid="uid://cvh5ag78ds88y" path="res://TEXTURE/Minecraft.ttf" id="11_aiml5"]
+[ext_resource type="Texture2D" uid="uid://cvo6nduk3uom2" path="res://TEXTURE/Escenarios Cinematicas/Circo/bg.png" id="3_peqth"]
+[ext_resource type="Texture2D" uid="uid://cnuusw3d76h53" path="res://TEXTURE/Escenarios Cinematicas/Circo/CORTINAS.png" id="4_aolvx"]
+[ext_resource type="Texture2D" uid="uid://chqmhgok3kf6j" path="res://TEXTURE/Gozo/Tranquilo/Idle.png" id="4_ko4v7"]
+[ext_resource type="Texture2D" uid="uid://bh6ue4hl87av0" path="res://TEXTURE/Gozo/Tranquilo/e.png" id="5_ovyrs"]
+[ext_resource type="Texture2D" uid="uid://bp57u1ra6h275" path="res://TEXTURE/Gozo/Tranquilo/a.png" id="6_2umm7"]
+[ext_resource type="Texture2D" uid="uid://dxbyq8crirui3" path="res://TEXTURE/Gozo/Tranquilo/o.png" id="7_qsvt8"]
+[ext_resource type="Texture2D" uid="uid://ctaxd8b5o4vp5" path="res://TEXTURE/Menu Principal/ENTER.png" id="8_kyos1"]
+[ext_resource type="Texture2D" uid="uid://nr17l5lkf3df" path="res://TEXTURE/Menu Principal/EXIT.png" id="9_1wi0m"]
+[ext_resource type="Texture2D" uid="uid://dxymweh2ku3h" path="res://TEXTURE/Sistema Dialogo/text.png" id="10_dr5ay"]
+[ext_resource type="FontFile" uid="uid://cvh5ag78ds88y" path="res://FONTS/Minecraft.ttf" id="11_aiml5"]
 [ext_resource type="AudioStream" uid="uid://dpsh6rt7rcjhd" path="res://SONG/CLOWN.ogg" id="13_gff8o"]
 [ext_resource type="Texture2D" uid="uid://blf732rsd7xm1" path="res://TEXTURE/icons/icon.png" id="13_ko4v7"]
 
@@ -22,7 +22,7 @@ animations = [{
 "texture": ExtResource("4_ko4v7")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idle_Tranquilo",
 "speed": 5.0
 }, {
 "frames": [{
@@ -36,7 +36,7 @@ animations = [{
 "texture": ExtResource("7_qsvt8")
 }],
 "loop": true,
-"name": &"talking",
+"name": &"talking_Tranquilo",
 "speed": 12.0
 }]
 
@@ -76,9 +76,7 @@ texture_filter = 1
 position = Vector2(161, 95.07)
 scale = Vector2(0.145, 0.145)
 sprite_frames = SubResource("SpriteFrames_um4nm")
-animation = &"talking"
-frame = 1
-frame_progress = 0.543473
+animation = &"talking_Tranquilo"
 
 [node name="Text" type="Sprite2D" parent="Fondo"]
 texture_filter = 1
@@ -130,8 +128,14 @@ offset_bottom = 230.0
 theme_override_constants/line_separation = 0
 theme_override_fonts/normal_font = ExtResource("11_aiml5")
 theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
 text = "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MusicaRem" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_gff8o")
 bus = &"Musica"
+
+[connection signal="pressed" from="Botones/EnterButton" to="." method="_on_enter_pressed"]
+[connection signal="pressed" from="Botones/ExitButton" to="." method="_on_exit_pressed"]

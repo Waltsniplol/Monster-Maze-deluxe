@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://v1wcx3dic5xd"]
 
-[ext_resource type="Texture2D" uid="uid://m8in66n1i417" path="res://TEXTURE/rex/rex1.png" id="2_an0j3"]
-[ext_resource type="Texture2D" uid="uid://cinfoq0et2hpu" path="res://TEXTURE/rex/rex2.png" id="3_mbx1r"]
-[ext_resource type="Texture2D" uid="uid://21p270jamvl" path="res://TEXTURE/rex/rex3.png" id="4_2twrn"]
-[ext_resource type="Texture2D" uid="uid://c8ormu45y32au" path="res://TEXTURE/rex/rex4.png" id="5_nme6n"]
-[ext_resource type="Texture2D" uid="uid://dbmj5wwiu8tbf" path="res://TEXTURE/rex/rex5.png" id="6_thout"]
-[ext_resource type="Texture2D" uid="uid://bol2sbdj3p4mq" path="res://TEXTURE/rex/rex6.png" id="7_uw2es"]
-[ext_resource type="Texture2D" uid="uid://wybmo33v7cpx" path="res://TEXTURE/rex/rex7.png" id="8_dpe5y"]
-[ext_resource type="Texture2D" uid="uid://cwawqq2y8mvmo" path="res://TEXTURE/rex/rex8.png" id="9_t866k"]
+[ext_resource type="Texture2D" uid="uid://m8in66n1i417" path="res://TEXTURE/Rex/Walk/rex1.png" id="2_an0j3"]
+[ext_resource type="Texture2D" uid="uid://cinfoq0et2hpu" path="res://TEXTURE/Rex/Walk/rex2.png" id="3_mbx1r"]
+[ext_resource type="Texture2D" uid="uid://21p270jamvl" path="res://TEXTURE/Rex/Walk/rex3.png" id="4_2twrn"]
+[ext_resource type="Texture2D" uid="uid://c8ormu45y32au" path="res://TEXTURE/Rex/Walk/rex4.png" id="5_nme6n"]
+[ext_resource type="Texture2D" uid="uid://dbmj5wwiu8tbf" path="res://TEXTURE/Rex/Walk/rex5.png" id="6_thout"]
+[ext_resource type="Texture2D" uid="uid://bol2sbdj3p4mq" path="res://TEXTURE/Rex/Walk/rex6.png" id="7_uw2es"]
+[ext_resource type="Texture2D" uid="uid://wybmo33v7cpx" path="res://TEXTURE/Rex/Walk/rex7.png" id="8_dpe5y"]
+[ext_resource type="Texture2D" uid="uid://cwawqq2y8mvmo" path="res://TEXTURE/Rex/Walk/rex8.png" id="9_t866k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_moliv"]
 animations = [{

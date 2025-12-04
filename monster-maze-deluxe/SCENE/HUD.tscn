@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bmli8io0mtwe" path="res://SCRIPS/hud.gd" id="1_5jn2j"]
 [ext_resource type="Texture2D" uid="uid://bth6bu3lggnij" path="res://TEXTURE/SCORE.png" id="1_vmajl"]
-[ext_resource type="FontFile" uid="uid://cvh5ag78ds88y" path="res://TEXTURE/Minecraft.ttf" id="2_ubqyb"]
+[ext_resource type="FontFile" uid="uid://cvh5ag78ds88y" path="res://FONTS/Minecraft.ttf" id="2_ubqyb"]
 [ext_resource type="PackedScene" uid="uid://c6lw23jo0vn77" path="res://SCENE/settings.tscn" id="4_5yg0y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vmajl"]

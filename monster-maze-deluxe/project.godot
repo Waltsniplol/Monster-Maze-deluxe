@@ -12,7 +12,7 @@ config_version=5
 
 config/name="MONSTER MAZE DELUXE"
 run/main_scene="uid://dy3rl3ra76gtd"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://blf732rsd7xm1"
 
 [autoload]
@@ -29,6 +29,7 @@ runtime/balloon_path="res://Dialogues/balloon.tscn"
 window/size/viewport_width=320
 window/size/viewport_height=240
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://d0w6aaonk1vht"
 
 [editor_plugins]
 

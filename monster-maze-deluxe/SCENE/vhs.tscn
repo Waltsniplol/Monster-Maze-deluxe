@@ -26,8 +26,9 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 1.5
 shader_parameter/vignette_opacity = 0.181
 
-[node name="VHS" type="ColorRect"]
+[node name="VHS" type="ColorRect" groups=["VHS"]]
 process_mode = 3
+visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_ae20f")
 anchors_preset = 15

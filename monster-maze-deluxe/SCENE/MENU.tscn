@@ -1,18 +1,18 @@
 [gd_scene load_steps=17 format=3 uid="uid://ce0h3ai1q2k3g"]
 
-[ext_resource type="Texture2D" uid="uid://c03x4exqse3v7" path="res://TEXTURE/fondo3.png" id="1_l5slf"]
+[ext_resource type="Texture2D" uid="uid://c03x4exqse3v7" path="res://TEXTURE/Menu Principal/fondo3.png" id="1_l5slf"]
 [ext_resource type="Script" uid="uid://c4gh6n23s3cpe" path="res://SCRIPS/MENU.gd" id="1_yc7lo"]
-[ext_resource type="Texture2D" uid="uid://b0liwsv0la3qn" path="res://TEXTURE/logo.png" id="2_yc7lo"]
-[ext_resource type="Texture2D" uid="uid://vvhiuv078tdh" path="res://TEXTURE/DEMO.png" id="3_b2ojv"]
-[ext_resource type="Texture2D" uid="uid://46ce5nxlse2s" path="res://TEXTURE/SUNFISH3.png" id="4_ak2ii"]
-[ext_resource type="Texture2D" uid="uid://dflhcasypdjp5" path="res://TEXTURE/play.png" id="4_rfcui"]
-[ext_resource type="Texture2D" uid="uid://co4de2v0npiva" path="res://TEXTURE/play-pressed.png" id="5_ak2ii"]
-[ext_resource type="Texture2D" uid="uid://cy2mw2jqwy7bt" path="res://TEXTURE/ALPHA2.png" id="5_b2ojv"]
-[ext_resource type="Texture2D" uid="uid://qjb5epqnl56a" path="res://TEXTURE/settings.png" id="6_mog1l"]
+[ext_resource type="Texture2D" uid="uid://b0liwsv0la3qn" path="res://TEXTURE/Menu Principal/logo.png" id="2_yc7lo"]
+[ext_resource type="Texture2D" uid="uid://vvhiuv078tdh" path="res://TEXTURE/Menu Principal/DEMO.png" id="3_b2ojv"]
+[ext_resource type="Texture2D" uid="uid://46ce5nxlse2s" path="res://TEXTURE/Menu Principal/SUNFISH3.png" id="4_ak2ii"]
+[ext_resource type="Texture2D" uid="uid://dflhcasypdjp5" path="res://TEXTURE/Menu Principal/play.png" id="4_rfcui"]
+[ext_resource type="Texture2D" uid="uid://co4de2v0npiva" path="res://TEXTURE/Menu Principal/play-pressed.png" id="5_ak2ii"]
+[ext_resource type="Texture2D" uid="uid://cy2mw2jqwy7bt" path="res://TEXTURE/Menu Principal/ALPHA2.png" id="5_b2ojv"]
+[ext_resource type="Texture2D" uid="uid://qjb5epqnl56a" path="res://TEXTURE/Menu Principal/settings.png" id="6_mog1l"]
 [ext_resource type="Script" uid="uid://dwluweh75sg54" path="res://SCRIPS/botones.gd" id="7_ak2ii"]
-[ext_resource type="Texture2D" uid="uid://dhadoxov2kchb" path="res://TEXTURE/settings - pressed.png" id="7_rb8v5"]
-[ext_resource type="Texture2D" uid="uid://us00w17hb0x6" path="res://TEXTURE/quit.png" id="8_snuvf"]
-[ext_resource type="Texture2D" uid="uid://besmrf73dgwd4" path="res://TEXTURE/quit-pressed.png" id="9_ky3yc"]
+[ext_resource type="Texture2D" uid="uid://dhadoxov2kchb" path="res://TEXTURE/Menu Principal/settings - pressed.png" id="7_rb8v5"]
+[ext_resource type="Texture2D" uid="uid://us00w17hb0x6" path="res://TEXTURE/Menu Principal/quit.png" id="8_snuvf"]
+[ext_resource type="Texture2D" uid="uid://besmrf73dgwd4" path="res://TEXTURE/Menu Principal/quit-pressed.png" id="9_ky3yc"]
 [ext_resource type="AudioStream" uid="uid://i3dm7560lsbf" path="res://SONG/new menu.ogg" id="15_ak2ii"]
 [ext_resource type="AudioStream" uid="uid://3haqdxf1ulu6" path="res://SONG/hover.ogg" id="16_mog1l"]
 [ext_resource type="PackedScene" uid="uid://c6lw23jo0vn77" path="res://SCENE/settings.tscn" id="17_rb8v5"]
@@ -60,15 +60,13 @@ scale = Vector2(0.711538, 0.711538)
 texture = ExtResource("5_b2ojv")
 
 [node name="Menu" type="Control" parent="."]
-layout_mode = 3
 anchors_preset = 0
 offset_right = 320.0
 offset_bottom = 240.0
 script = ExtResource("7_ak2ii")
 
-[node name="hover_player" type="AudioStreamPlayer2D" parent="Menu"]
+[node name="hover_player" type="AudioStreamPlayer" parent="Menu"]
 stream = ExtResource("16_mog1l")
-panning_strength = 0.0
 
 [node name="Botones" type="VBoxContainer" parent="Menu"]
 layout_mode = 1
@@ -108,9 +106,10 @@ texture_pressed = ExtResource("9_ky3yc")
 visible = false
 layout_mode = 1
 
-[node name="Musica" type="AudioStreamPlayer2D" parent="."]
+[node name="Musica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_ak2ii")
 autoplay = true
+bus = &"Musica"
 
 [connection signal="pressed" from="Menu/Botones/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/Botones/Settings" to="." method="_on_settings_pressed"]

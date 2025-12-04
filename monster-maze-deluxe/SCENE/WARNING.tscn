@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dy3rl3ra76gtd"]
 
-[ext_resource type="FontFile" uid="uid://cvh5ag78ds88y" path="res://TEXTURE/Minecraft.ttf" id="1_qx8sc"]
+[ext_resource type="FontFile" uid="uid://cvh5ag78ds88y" path="res://FONTS/Minecraft.ttf" id="1_qx8sc"]
 [ext_resource type="Script" uid="uid://noxaicn622d7" path="res://SCRIPS/warning.gd" id="1_tpb4s"]
 [ext_resource type="AudioStream" uid="uid://dryqgb1gcujbt" path="res://SONG/advertencia1.ogg" id="4_tpb4s"]
 

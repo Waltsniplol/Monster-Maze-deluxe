@@ -37,11 +37,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 37.0
-offset_top = 86.0
+offset_top = 88.0
 offset_right = 286.0
-offset_bottom = 102.0
+offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
+value = 80.0
 
 [node name="Efectos" type="HSlider" parent="Pistas"]
 layout_mode = 1
@@ -50,17 +51,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 37.5
+offset_left = 37.0
 offset_top = 107.0
-offset_right = 287.5
+offset_right = 287.0
 offset_bottom = 123.0
 grow_horizontal = 2
 grow_vertical = 2
+value = 80.0
 
 [node name="Inputs" type="Control" parent="."]
 anchors_preset = 0
 
-[node name="Izquierda" type="Button" parent="Inputs"]
+[node name="left" type="Button" parent="Inputs"]
 layout_mode = 0
 offset_left = 161.0
 offset_top = 189.0
@@ -68,7 +70,7 @@ offset_right = 207.0
 offset_bottom = 221.0
 text = "Izqu"
 
-[node name="Abajo" type="Button" parent="Inputs"]
+[node name="back" type="Button" parent="Inputs"]
 layout_mode = 0
 offset_left = 210.0
 offset_top = 189.0
@@ -76,7 +78,7 @@ offset_right = 256.0
 offset_bottom = 221.0
 text = "Abaj"
 
-[node name="Arriba" type="Button" parent="Inputs"]
+[node name="forward" type="Button" parent="Inputs"]
 layout_mode = 0
 offset_left = 210.0
 offset_top = 153.0
@@ -84,7 +86,7 @@ offset_right = 256.0
 offset_bottom = 185.0
 text = "Arri"
 
-[node name="Derecha" type="Button" parent="Inputs"]
+[node name="right" type="Button" parent="Inputs"]
 layout_mode = 0
 offset_left = 259.0
 offset_top = 189.0
@@ -107,6 +109,19 @@ offset_left = 5.0
 offset_top = 145.0
 offset_right = 108.0
 offset_bottom = 176.0
+button_pressed = true
 text = "VHS"
 
+[node name="IndControl" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 321.0
+offset_bottom = 240.0
+text = "TOCA ALGUNA 
+TECLA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Volver" to="." method="_on_volver_pressed"]
+[connection signal="toggled" from="WinFull" to="." method="_on_win_full_toggled"]
+[connection signal="toggled" from="VHS" to="." method="_on_vhs_toggled"]
