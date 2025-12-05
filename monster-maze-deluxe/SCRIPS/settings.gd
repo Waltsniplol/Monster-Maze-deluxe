@@ -8,17 +8,34 @@ func _ready() -> void:
 		i.pressed.connect(Callable(self,"pressed_cambio"))
 	$VHS.button_pressed = get_tree().get_first_node_in_group("VHS").visible
 
-@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
+	#Cambia los Valores
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Musica"), percent_to_db($Pistas/Musica.value))
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Efectos"), percent_to_db($Pistas/Efectos.value))
-	match espera:
+	#Pitido
+	if $Pistas/Musica.has_focus() && Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		if !$Audios/Pitido_Musica.playing:
+			$Audios/Pitido_Musica.play()
+	else:
+		$Audios/Pitido_Musica.stop()
+	if $Pistas/Efectos.has_focus() && Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		if !$Audios/Pitido_Efectos.playing:
+			$Audios/Pitido_Efectos.play()
+	else:
+		$Audios/Pitido_Efectos.stop()
+	
+	match espera:#Esto es Para Los Botones
 		true:
 			ESPERA(true)
 			$IndControl.visible = true
 		_:
 			ESPERA(false)
 			$IndControl.visible = false
+
+func _input(event) -> void:
+	if event is InputEventKey && espera == true:
+		CAMBIO(event)
+		espera = false
 
 func percent_to_db(volume_percent: float) -> float: #Este es La Ecuacion utilizar para combertir Porcentaje en decibeles
 	if volume_percent <= 0:
@@ -35,11 +52,6 @@ func _on_win_full_toggled(toggled_on: bool) -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func _on_vhs_toggled(toggled_on: bool) -> void: GLOBAL.Act_VHS(toggled_on)
-
-func _input(event) -> void:
-	if event is InputEventKey && espera == true:
-		CAMBIO(event)
-		espera = false
 
 func CAMBIO(event) -> void:
 	if event.is_pressed():

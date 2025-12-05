@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6lw23jo0vn77"]
+[gd_scene load_steps=4 format=3 uid="uid://c6lw23jo0vn77"]
 
 [ext_resource type="Script" uid="uid://qm2ejo5lg42f" path="res://SCRIPS/settings.gd" id="1_vrtkc"]
+[ext_resource type="Texture2D" uid="uid://befxeh7jsa4jg" path="res://TEXTURE/Settings/Fondo.png" id="2_icyh1"]
+[ext_resource type="AudioStream" uid="uid://b5fydfvwfj2of" path="res://SONG/Pitido.mp3" id="2_n2c5u"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -11,19 +13,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vrtkc")
 
-[node name="FONDO" type="ColorRect" parent="."]
+[node name="Fondo" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.314316, 0.314316, 0.314316, 1)
+texture = ExtResource("2_icyh1")
 
 [node name="Volver" type="Button" parent="."]
 layout_mode = 0
-offset_right = 41.0
-offset_bottom = 36.0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 51.0
+offset_bottom = 39.0
 text = "X"
 
 [node name="Pistas" type="Control" parent="."]
@@ -37,9 +42,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 37.0
-offset_top = 88.0
+offset_top = 69.0
 offset_right = 286.0
-offset_bottom = 104.0
+offset_bottom = 85.0
 grow_horizontal = 2
 grow_vertical = 2
 value = 80.0
@@ -52,9 +57,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 37.0
-offset_top = 107.0
+offset_top = 88.0
 offset_right = 287.0
-offset_bottom = 123.0
+offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
 value = 80.0
@@ -64,51 +69,51 @@ anchors_preset = 0
 
 [node name="left" type="Button" parent="Inputs"]
 layout_mode = 0
-offset_left = 161.0
-offset_top = 189.0
-offset_right = 207.0
-offset_bottom = 221.0
+offset_left = 144.0
+offset_top = 165.0
+offset_right = 190.0
+offset_bottom = 197.0
 text = "Izqu"
 
 [node name="back" type="Button" parent="Inputs"]
 layout_mode = 0
-offset_left = 210.0
-offset_top = 189.0
-offset_right = 256.0
-offset_bottom = 221.0
+offset_left = 193.0
+offset_top = 165.0
+offset_right = 239.0
+offset_bottom = 197.0
 text = "Abaj"
 
 [node name="forward" type="Button" parent="Inputs"]
 layout_mode = 0
-offset_left = 210.0
-offset_top = 153.0
-offset_right = 256.0
-offset_bottom = 185.0
+offset_left = 193.0
+offset_top = 129.0
+offset_right = 239.0
+offset_bottom = 161.0
 text = "Arri"
 
 [node name="right" type="Button" parent="Inputs"]
 layout_mode = 0
-offset_left = 259.0
-offset_top = 189.0
-offset_right = 305.0
-offset_bottom = 221.0
+offset_left = 242.0
+offset_top = 165.0
+offset_right = 288.0
+offset_bottom = 197.0
 text = "Dere"
 
 [node name="WinFull" type="CheckBox" parent="."]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 173.0
-offset_right = 108.0
-offset_bottom = 227.0
+offset_left = 29.0
+offset_top = 149.0
+offset_right = 132.0
+offset_bottom = 203.0
 text = "Pantalla 
 Completa"
 
 [node name="VHS" type="CheckBox" parent="."]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 145.0
-offset_right = 108.0
-offset_bottom = 176.0
+offset_left = 29.0
+offset_top = 121.0
+offset_right = 132.0
+offset_bottom = 152.0
 button_pressed = true
 text = "VHS"
 
@@ -121,6 +126,16 @@ text = "TOCA ALGUNA
 TECLA"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Audios" type="Node" parent="."]
+
+[node name="Pitido_Musica" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("2_n2c5u")
+bus = &"Musica"
+
+[node name="Pitido_Efectos" type="AudioStreamPlayer" parent="Audios"]
+stream = ExtResource("2_n2c5u")
+bus = &"Efectos"
 
 [connection signal="pressed" from="Volver" to="." method="_on_volver_pressed"]
 [connection signal="toggled" from="WinFull" to="." method="_on_win_full_toggled"]

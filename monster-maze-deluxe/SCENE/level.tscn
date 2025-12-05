@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://drg1necyenax5"]
+[gd_scene load_steps=9 format=3 uid="uid://drg1necyenax5"]
 
 [ext_resource type="Script" uid="uid://cymup6e7hhyak" path="res://addons/level_block/level_block_node.gd" id="1_gsvho"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="2_rsdve"]
@@ -11,6 +11,10 @@
 background_color = Color(1, 1, 1, 1)
 background_energy_multiplier = 0.0
 ambient_light_energy = 0.0
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_vbneo"]
+vertices = PackedVector3Array(-0.0325, 0.0425, 5.5125, 0.0325, 0.0425, -5.5125, 0.0325, 0.0425, 5.5125, -0.0325, 0.0425, -5.5125, -0.0325, -0.0425, 5.5125, 0.0325, -0.0425, -5.5125, 0.0325, -0.0425, 5.5125, -0.0325, -0.0425, -5.5125, 0.0325, 0.0425, 5.5125, -0.0325, 0.0425, -5.5125, 0.0325, 0.0425, -5.5125, -0.0325, 0.0425, 5.5125, 0.0325, -0.0425, 5.5125, -0.0325, -0.0425, -5.5125, 0.0325, -0.0425, -5.5125, -0.0325, -0.0425, 5.5125, 0.0325, 0.0425, 5.5125, -0.0325, -0.0425, 5.5125, -0.0325, 0.0425, 5.5125, 0.0325, -0.0425, 5.5125, 0.0325, 0.0425, -5.5125, -0.0325, -0.0425, -5.5125, -0.0325, 0.0425, -5.5125, 0.0325, -0.0425, -5.5125)
+polygons = [PackedInt32Array(0, 2, 4), PackedInt32Array(2, 6, 4), PackedInt32Array(1, 3, 5), PackedInt32Array(3, 7, 5), PackedInt32Array(8, 10, 12), PackedInt32Array(10, 14, 12), PackedInt32Array(9, 11, 13), PackedInt32Array(11, 15, 13), PackedInt32Array(16, 18, 20), PackedInt32Array(18, 22, 20), PackedInt32Array(17, 19, 21), PackedInt32Array(19, 23, 21)]
 
 [node name="LEVEL" type="Node3D"]
 
@@ -119,6 +123,10 @@ west_face = 0
 top_face = 0
 metadata/_custom_type_script = "uid://cymup6e7hhyak"
 
+[node name="CaminoRex" type="NavigationRegion3D" parent="Escenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23936081, -5.596898)
+navigation_mesh = SubResource("NavigationMesh_vbneo")
+
 [node name="Personaje" type="Node3D" parent="."]
 
 [node name="Rex" parent="Personaje" instance=ExtResource("4_c5pe8")]
@@ -127,3 +135,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
 [node name="Player" parent="Personaje" groups=["player"] instance=ExtResource("4_gsvho")]
 
 [node name="GUI" parent="." instance=ExtResource("5_vbneo")]
+
+[connection signal="Gamo_Over" from="Personaje/Rex" to="GUI" method="_on_rex_gamo_over"]

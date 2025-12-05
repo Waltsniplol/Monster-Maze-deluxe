@@ -40,7 +40,7 @@ offset_bottom = 34.0
 text = "REX LIES IN WAIT"
 label_settings = SubResource("LabelSettings_vmajl")
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 
 [node name="Game_Over" type="Control" parent="."]
 visible = false

@@ -83,7 +83,7 @@ _data = {
 &"headbob": SubResource("Animation_pvtcc")
 }
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_pvtcc")
 
 [node name="Camara" type="Camera3D" parent="."]
