@@ -33,7 +33,6 @@ func move_local(direction: Vector3):
 	tween.tween_property(self, "transform", target_transform, TRAVEL_TIME)
 	animation.play("headbob")
 
-
 func rotate_y_local(angle: float):
 	tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	var target_basis := transform.basis.rotated(Vector3.UP, angle)

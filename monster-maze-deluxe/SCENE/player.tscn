@@ -101,6 +101,9 @@ shape = SubResource("BoxShape3D_pvtcc")
 [node name="FrontRay" type="RayCast3D" parent="RayCast"]
 target_position = Vector3(0, 0, -2)
 
+[node name="DashRay" type="RayCast3D" parent="RayCast"]
+target_position = Vector3(0, 0, -4)
+
 [node name="BackRay" type="RayCast3D" parent="RayCast"]
 target_position = Vector3(0, 0, 2)
 
@@ -108,3 +111,9 @@ target_position = Vector3(0, 0, 2)
 libraries = {
 &"": SubResource("AnimationLibrary_m0ta0")
 }
+
+[node name="Timer" type="Node" parent="."]
+
+[node name="Can_Dash" type="Timer" parent="Timer"]
+wait_time = 2.0
+one_shot = true

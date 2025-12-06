@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cp5g0sd7lsm0u"]
+[gd_scene load_steps=7 format=3 uid="uid://cp5g0sd7lsm0u"]
 
 [ext_resource type="Script" uid="uid://bmli8io0mtwe" path="res://SCRIPS/hud.gd" id="1_5jn2j"]
 [ext_resource type="Texture2D" uid="uid://bth6bu3lggnij" path="res://TEXTURE/SCORE.png" id="1_vmajl"]
 [ext_resource type="FontFile" uid="uid://cvh5ag78ds88y" path="res://FONTS/Minecraft.ttf" id="2_ubqyb"]
 [ext_resource type="PackedScene" uid="uid://c6lw23jo0vn77" path="res://SCENE/settings.tscn" id="4_5yg0y"]
+[ext_resource type="Texture2D" uid="uid://83p23uui8o1c" path="res://icon.svg" id="4_26ddd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vmajl"]
 font = ExtResource("2_ubqyb")
@@ -27,7 +28,7 @@ offset_top = 185.0
 offset_right = -78.4375
 offset_bottom = -2219.93
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 texture = ExtResource("1_vmajl")
 
 [node name="Text" type="Label" parent="IndRex"]
@@ -48,6 +49,55 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="ContrMovil" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0.6039216)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ESC" type="TouchScreenButton" parent="ContrMovil"]
+position = Vector2(1.9999999, 1.9999998)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_26ddd")
+action = "ui_cancel"
+visibility_mode = 1
+
+[node name="Izq" type="TouchScreenButton" parent="ContrMovil"]
+position = Vector2(11.999999, 200)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_26ddd")
+action = "left"
+visibility_mode = 1
+
+[node name="Aba" type="TouchScreenButton" parent="ContrMovil"]
+position = Vector2(39, 200)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_26ddd")
+action = "back"
+visibility_mode = 1
+
+[node name="Der" type="TouchScreenButton" parent="ContrMovil"]
+position = Vector2(66, 200)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_26ddd")
+action = "right"
+visibility_mode = 1
+
+[node name="Arri" type="TouchScreenButton" parent="ContrMovil"]
+position = Vector2(39, 173)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_26ddd")
+action = "forward"
+visibility_mode = 1
+
+[node name="Dash" type="TouchScreenButton" parent="ContrMovil"]
+position = Vector2(259.00003, 176)
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("4_26ddd")
+action = "Dash"
+visibility_mode = 1
 
 [node name="Menu_Pausa" type="Control" parent="."]
 visible = false
