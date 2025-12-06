@@ -44,7 +44,7 @@ animations = [{
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_moliv"]
-size = Vector3(1, 1, 0.0214233)
+size = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7ck7d"]
 
@@ -65,7 +65,6 @@ sprite_frames = SubResource("SpriteFrames_moliv")
 animation = &"running"
 
 [node name="Coll" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0115662)
 shape = SubResource("BoxShape3D_moliv")
 
 [node name="Areas" type="Node3D" parent="."]

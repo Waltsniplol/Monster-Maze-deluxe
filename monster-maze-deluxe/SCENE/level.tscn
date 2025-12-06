@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://drg1necyenax5"]
+[gd_scene load_steps=95 format=3 uid="uid://drg1necyenax5"]
 
+[ext_resource type="Environment" uid="uid://i5wpjbdsqvoa" path="res://level.tres" id="1_c5pe8"]
 [ext_resource type="Script" uid="uid://cymup6e7hhyak" path="res://addons/level_block/level_block_node.gd" id="1_gsvho"]
 [ext_resource type="Material" uid="uid://c71yladfjhgud" path="res://addons/level_block/default_material.tres" id="2_rsdve"]
 [ext_resource type="Texture2D" uid="uid://btospp7yqua61" path="res://TEXTURE/wall/wall.png" id="4_bdqi0"]
@@ -7,43 +8,345 @@
 [ext_resource type="PackedScene" uid="uid://djtdq56hwmlie" path="res://SCENE/player.tscn" id="4_gsvho"]
 [ext_resource type="PackedScene" uid="uid://cp5g0sd7lsm0u" path="res://SCENE/HUD.tscn" id="5_vbneo"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_loqv1"]
+size = Vector2(32.1, 0.1)
+
 [sub_resource type="NavigationMesh" id="NavigationMesh_vbneo"]
-vertices = PackedVector3Array(3.5, 0, 0.05, -3.5, 0, 0.05, 3.5, 0, -0.05, -3.5, 0, -0.05)
+vertices = PackedVector3Array(16.05, 0, 0.05, -16.05, 0, 0.05, 16.05, 0, -0.05, -16.05, 0, -0.05)
 polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_3clh0"]
+size = Vector2(0.1, 30)
+
 [sub_resource type="NavigationMesh" id="NavigationMesh_c5pe8"]
-vertices = PackedVector3Array(0.05, 0, 5.5, -0.05, 0, 5.5, 0.05, 0, -5.5, -0.05, 0, -5.5)
+vertices = PackedVector3Array(0.05, 0, 15, -0.05, 0, 15, 0.05, 0, -15, -0.05, 0, -15)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6nwpj"]
+size = Vector2(14.1, 0.1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_bdqi0"]
+vertices = PackedVector3Array(7.05, 0, 0.05, -7.05, 0, 0.05, 7.05, 0, -0.05, -7.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_85gky"]
+size = Vector2(10.1, 0.1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_qdaua"]
+vertices = PackedVector3Array(5.05, 0, 0.05, -5.05, 0, 0.05, 5.05, 0, -0.05, -5.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_0n2u1"]
+vertices = PackedVector3Array(5.05, 0, 0.05, -5.05, 0, 0.05, 5.05, 0, -0.05, -5.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qwqn4"]
+size = Vector2(14.1, 0.1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_byphd"]
+vertices = PackedVector3Array(7.05, 0, 0.05, -7.05, 0, 0.05, 7.05, 0, -0.05, -7.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kw3yb"]
+size = Vector2(12.1, 0.1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_3lx2r"]
+vertices = PackedVector3Array(6.05, 0, 0.05, -6.05, 0, 0.05, 6.05, 0, -0.05, -6.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_fo4mv"]
+vertices = PackedVector3Array(6.05, 0, 0.05, -6.05, 0, 0.05, 6.05, 0, -0.05, -6.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_4rymb"]
+vertices = PackedVector3Array(6.05, 0, 0.05, -6.05, 0, 0.05, 6.05, 0, -0.05, -6.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m1sbp"]
+size = Vector2(0.1, 8)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_7qnba"]
+vertices = PackedVector3Array(0.05, 0, 4, -0.05, 0, 4, 0.05, 0, -4, -0.05, 0, -4)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_73o11"]
+size = Vector2(8, 0.1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_qb8tl"]
+vertices = PackedVector3Array(4, 0, 0.05, -4, 0, 0.05, 4, 0, -0.05, -4, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0n2u1"]
+size = Vector2(6, 0.1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_nydfm"]
+vertices = PackedVector3Array(3, 0, 0.05, -3, 0, 0.05, 3, 0, -0.05, -3, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_noibu"]
+vertices = PackedVector3Array(3, 0, 0.05, -3, 0, 0.05, 3, 0, -0.05, -3, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_q23sb"]
+vertices = PackedVector3Array(3, 0, 0.05, -3, 0, 0.05, 3, 0, -0.05, -3, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_byphd"]
+size = Vector2(0.1, 12)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_v7pov"]
+vertices = PackedVector3Array(0.05, 0, 6, -0.05, 0, 6, 0.05, 0, -6, -0.05, 0, -6)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3lx2r"]
+size = Vector2(8.1, 0.1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_p21nk"]
+vertices = PackedVector3Array(4.05, 0, 0.05, -4.05, 0, 0.05, 4.05, 0, -0.05, -4.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fo4mv"]
+size = Vector2(0.1, 28)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_3vwto"]
+vertices = PackedVector3Array(0.05, 0, 14, -0.05, 0, 14, 0.05, 0, -14, -0.05, 0, -14)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4rymb"]
+size = Vector2(0.1, 8)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_thpcs"]
+vertices = PackedVector3Array(0.05, 0, 4, -0.05, 0, 4, 0.05, 0, -4, -0.05, 0, -4)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7qnba"]
+size = Vector2(0.1, 6)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_3dqdm"]
+vertices = PackedVector3Array(0.05, 0, 3, -0.05, 0, 3, 0.05, 0, -3, -0.05, 0, -3)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qb8tl"]
+size = Vector2(0.1, 10)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_31dof"]
+vertices = PackedVector3Array(0.05, 0, 5, -0.05, 0, 5, 0.05, 0, -5, -0.05, 0, -5)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nydfm"]
+size = Vector2(12.1, 0.1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_xp11i"]
+vertices = PackedVector3Array(6.05, 0, 0.05, -6.05, 0, 0.05, 6.05, 0, -0.05, -6.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_noibu"]
+size = Vector2(0.1, 20)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_oamc2"]
+vertices = PackedVector3Array(0.05, 0, 10, -0.05, 0, 10, 0.05, 0, -10, -0.05, 0, -10)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q23sb"]
+size = Vector2(4.1, 0.1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_aw80t"]
+vertices = PackedVector3Array(2.05, 0, 0.05, -2.05, 0, 0.05, 2.05, 0, -0.05, -2.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_loqv1"]
+vertices = PackedVector3Array(2.05, 0, 0.05, -2.05, 0, 0.05, 2.05, 0, -0.05, -2.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_3clh0"]
+vertices = PackedVector3Array(2.05, 0, 0.05, -2.05, 0, 0.05, 2.05, 0, -0.05, -2.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_6nwpj"]
+vertices = PackedVector3Array(2.05, 0, 0.05, -2.05, 0, 0.05, 2.05, 0, -0.05, -2.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v7pov"]
+size = Vector2(0.1, 2)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_85gky"]
+vertices = PackedVector3Array(0.05, 0, 1, -0.05, 0, 1, 0.05, 0, -1, -0.05, 0, -1)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_qwqn4"]
+vertices = PackedVector3Array(0.05, 0, 1, -0.05, 0, 1, 0.05, 0, -1, -0.05, 0, -1)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_kw3yb"]
+vertices = PackedVector3Array(0.05, 0, 1, -0.05, 0, 1, 0.05, 0, -1, -0.05, 0, -1)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p21nk"]
+size = Vector2(10.1, 0.1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_m1sbp"]
+vertices = PackedVector3Array(5.05, 0, 0.05, -5.05, 0, 0.05, 5.05, 0, -0.05, -5.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3vwto"]
+size = Vector2(0.1, 10)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_73o11"]
+vertices = PackedVector3Array(0.05, 0, 5, -0.05, 0, 5, 0.05, 0, -5, -0.05, 0, -5)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_thpcs"]
+size = Vector2(0.1, 8)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_15gtm"]
+vertices = PackedVector3Array(0.05, 0, 4, -0.05, 0, 4, 0.05, 0, -4, -0.05, 0, -4)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3dqdm"]
+size = Vector2(0.1, 8)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_2furu"]
+vertices = PackedVector3Array(0.05, 0, 4, -0.05, 0, 4, 0.05, 0, -4, -0.05, 0, -4)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_31dof"]
+size = Vector2(12.1, 0.1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_sundi"]
+vertices = PackedVector3Array(6.05, 0, 0.05, -6.05, 0, 0.05, 6.05, 0, -0.05, -6.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xp11i"]
+size = Vector2(2.1, 0.1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_l2jn7"]
+vertices = PackedVector3Array(1.05, 0, 0.05, -1.05, 0, 0.05, 1.05, 0, -0.05, -1.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_16wn6"]
+vertices = PackedVector3Array(1.05, 0, 0.05, -1.05, 0, 0.05, 1.05, 0, -0.05, -1.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ssg27"]
+vertices = PackedVector3Array(1.05, 0, 0.05, -1.05, 0, 0.05, 1.05, 0, -0.05, -1.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ugtjb"]
+vertices = PackedVector3Array(1.05, 0, 0.05, -1.05, 0, 0.05, 1.05, 0, -0.05, -1.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_56pck"]
+vertices = PackedVector3Array(1.05, 0, 0.05, -1.05, 0, 0.05, 1.05, 0, -0.05, -1.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_n00r5"]
+vertices = PackedVector3Array(1.05, 0, 0.05, -1.05, 0, 0.05, 1.05, 0, -0.05, -1.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oamc2"]
+size = Vector2(10.1, 0.1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_2k5pb"]
+vertices = PackedVector3Array(5.05, 0, 0.05, -5.05, 0, 0.05, 5.05, 0, -0.05, -5.05, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_aw80t"]
+size = Vector2(0.1, 7)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_s2jkd"]
+vertices = PackedVector3Array(0.05, 0, 3.5, -0.05, 0, 3.5, 0.05, 0, -3.5, -0.05, 0, -3.5)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vbneo"]
+size = Vector2(0.1, 4)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_vjftg"]
+vertices = PackedVector3Array(0.05, 0, 2, -0.05, 0, 2, 0.05, 0, -2, -0.05, 0, -2)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c5pe8"]
+size = Vector2(0.1, 18)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_obhjv"]
+vertices = PackedVector3Array(0.05, 0, 9, -0.05, 0, 9, 0.05, 0, -9, -0.05, 0, -9)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bdqi0"]
+size = Vector2(0.1, 28)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_exhlu"]
+vertices = PackedVector3Array(0.05, 0, 14, -0.05, 0, 14, 0.05, 0, -14, -0.05, 0, -14)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qdaua"]
+size = Vector2(0.1, 4)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_oar1g"]
+vertices = PackedVector3Array(0.05, 0, 2, -0.05, 0, 2, 0.05, 0, -2, -0.05, 0, -2)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_8uklf"]
+vertices = PackedVector3Array(0.05, 0, 2, -0.05, 0, 2, 0.05, 0, -2, -0.05, 0, -2)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_15gtm"]
+size = Vector2(0.1, 8)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_c22ig"]
+vertices = PackedVector3Array(0.05, 0, 4, -0.05, 0, 4, 0.05, 0, -4, -0.05, 0, -4)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_0rtno"]
+vertices = PackedVector3Array(0.05, 0, 2, -0.05, 0, 2, 0.05, 0, -2, -0.05, 0, -2)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ji6op"]
+vertices = PackedVector3Array(0.05, 0, 2, -0.05, 0, 2, 0.05, 0, -2, -0.05, 0, -2)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_3y6gb"]
+vertices = PackedVector3Array(0.05, 0, 2, -0.05, 0, 2, 0.05, 0, -2, -0.05, 0, -2)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_6wn4v"]
+vertices = PackedVector3Array(0.05, 0, 2, -0.05, 0, 2, 0.05, 0, -2, -0.05, 0, -2)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_cdojc"]
+vertices = PackedVector3Array(0.05, 0, 2, -0.05, 0, 2, 0.05, 0, -2, -0.05, 0, -2)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_kat60"]
+vertices = PackedVector3Array(4, 0, 0.05, -4, 0, 0.05, 4, 0, -0.05, -4, 0, -0.05)
+polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_nx4yk"]
+vertices = PackedVector3Array(5.05, 0, 0.05, -5.05, 0, 0.05, 5.05, 0, -0.05, -5.05, 0, -0.05)
 polygons = [PackedInt32Array(0, 1, 2), PackedInt32Array(1, 3, 2)]
 
 [node name="LEVEL" type="Node3D"]
 
 [node name="Escenario" type="Node3D" parent="."]
 
-[node name="blocks" type="Node3D" parent="Escenario"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Escenario"]
+environment = ExtResource("1_c5pe8")
 
-[node name="LevelBlock" type="Node3D" parent="Escenario/blocks"]
+[node name="Block" type="Node3D" parent="Escenario"]
+metadata/_edit_group_ = true
+
+[node name="LevelBlock3" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 script = ExtResource("1_gsvho")
 material = ExtResource("2_rsdve")
 texture_sheet = ExtResource("4_bdqi0")
 texture_size = 64.0
-east_face = 1
-south_face = 0
+north_face = 0
 west_face = 0
 top_face = 0
 metadata/_custom_type_script = "uid://cymup6e7hhyak"
 
-[node name="LevelBlock2" type="Node3D" parent="Escenario/blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
-script = ExtResource("1_gsvho")
-material = ExtResource("2_rsdve")
-texture_sheet = ExtResource("4_bdqi0")
-texture_size = 64.0
-east_face = 0
-top_face = 0
-metadata/_custom_type_script = "uid://cymup6e7hhyak"
-
-[node name="LevelBlock7" type="Node3D" parent="Escenario/blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+[node name="LevelBlock4" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 script = ExtResource("1_gsvho")
 material = ExtResource("2_rsdve")
 texture_sheet = ExtResource("4_bdqi0")
@@ -53,8 +356,42 @@ south_face = 0
 top_face = 0
 metadata/_custom_type_script = "uid://cymup6e7hhyak"
 
-[node name="LevelBlock8" type="Node3D" parent="Escenario/blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
+[node name="LevelBlock5" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+east_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock6" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock7" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock8" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
 script = ExtResource("1_gsvho")
 material = ExtResource("2_rsdve")
 texture_sheet = ExtResource("4_bdqi0")
@@ -64,8 +401,8 @@ south_face = 0
 top_face = 0
 metadata/_custom_type_script = "uid://cymup6e7hhyak"
 
-[node name="LevelBlock9" type="Node3D" parent="Escenario/blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -2)
+[node name="LevelBlock9" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
 script = ExtResource("1_gsvho")
 material = ExtResource("2_rsdve")
 texture_sheet = ExtResource("4_bdqi0")
@@ -75,8 +412,75 @@ south_face = 0
 top_face = 0
 metadata/_custom_type_script = "uid://cymup6e7hhyak"
 
-[node name="LevelBlock3" type="Node3D" parent="Escenario/blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+[node name="LevelBlock10" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock11" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock12" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 0)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock13" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock14" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock15" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock16" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 2)
 script = ExtResource("1_gsvho")
 material = ExtResource("2_rsdve")
 texture_sheet = ExtResource("4_bdqi0")
@@ -86,8 +490,94 @@ west_face = 0
 top_face = 0
 metadata/_custom_type_script = "uid://cymup6e7hhyak"
 
-[node name="LevelBlock4" type="Node3D" parent="Escenario/blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+[node name="LevelBlock17" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock18" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock19" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock20" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock21" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock22" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock23" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock24" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 2)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock25" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 script = ExtResource("1_gsvho")
 material = ExtResource("2_rsdve")
 texture_sheet = ExtResource("4_bdqi0")
@@ -97,8 +587,82 @@ west_face = 0
 top_face = 0
 metadata/_custom_type_script = "uid://cymup6e7hhyak"
 
-[node name="LevelBlock5" type="Node3D" parent="Escenario/blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+[node name="LevelBlock26" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 4)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock27" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock28" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 4)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock29" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 4)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock30" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 4)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock31" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 4)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock32" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 4)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock33" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 4)
 script = ExtResource("1_gsvho")
 material = ExtResource("2_rsdve")
 texture_sheet = ExtResource("4_bdqi0")
@@ -108,8 +672,71 @@ west_face = 0
 top_face = 0
 metadata/_custom_type_script = "uid://cymup6e7hhyak"
 
-[node name="LevelBlock6" type="Node3D" parent="Escenario/blocks"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+[node name="LevelBlock34" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock35" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 6)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock36" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock37" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock38" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 6)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock39" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 6)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock40" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 6)
 script = ExtResource("1_gsvho")
 material = ExtResource("2_rsdve")
 texture_sheet = ExtResource("4_bdqi0")
@@ -119,34 +746,2311 @@ west_face = 0
 top_face = 0
 metadata/_custom_type_script = "uid://cymup6e7hhyak"
 
-[node name="N" type="Node3D" parent="Escenario"]
+[node name="LevelBlock41" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 6)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
 
-[node name="LevelBlock" type="Node3D" parent="Escenario/N"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10306537, 0, 0)
+[node name="LevelBlock42" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 6)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock43" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 6)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock44" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 6)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock45" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 6)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock46" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 6)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock47" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock48" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 8)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock49" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 8)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock50" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock51" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 8)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock52" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 8)
 script = ExtResource("1_gsvho")
 material = ExtResource("2_rsdve")
 texture_sheet = ExtResource("4_bdqi0")
 texture_size = 64.0
 top_face = 0
-bottom_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock53" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 8)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock54" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 8)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock55" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 8)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock56" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 8)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock57" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 8)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock58" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 8)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock59" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 8)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock60" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 10)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock61" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 10)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock62" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 10)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock63" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 10)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock64" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 10)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock65" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 10)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock66" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 12)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock67" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock68" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 12)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock69" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock70" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 12)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock71" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock72" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 12)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock73" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 12)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock74" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 12)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock75" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 12)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock76" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 12)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock77" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 12)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock78" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 14)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock79" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 14)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock80" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 14)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock81" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 14)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock82" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 14)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock83" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 14)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock84" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 14)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock85" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 14)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock86" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 14)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock87" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 14)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock88" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 14)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock89" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 14)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock90" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 14)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock91" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock92" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 16)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock93" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 16)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock94" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock95" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 16)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock96" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock97" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 16)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock98" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 16)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock99" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 16)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock100" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 16)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock101" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 16)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock102" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock103" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 18)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock104" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 18)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock105" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 18)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock106" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 18)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock107" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 18)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock108" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 18)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock109" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 18)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock110" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 18)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock111" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 18)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock112" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 18)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock113" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock114" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 20)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock115" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock116" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 20)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock117" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 20)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock118" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock119" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 20)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock120" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 20)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock121" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 20)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock122" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 22)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock123" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 22)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock124" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 22)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock125" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 22)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock126" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 22)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock127" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 22)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock128" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 22)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock129" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 22)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock130" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 22)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock131" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 22)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock132" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 22)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock133" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 22)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock134" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 24)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock135" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 24)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock136" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 24)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock137" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 24)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock138" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 24)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock139" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 24)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock140" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 24)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock141" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 24)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock142" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 24)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock143" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 24)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock144" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 24)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock145" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 24)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock146" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 24)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+east_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock147" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 26)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock148" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 26)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock149" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 26)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock150" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 26)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock151" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 26)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock152" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 26)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock153" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 26)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock154" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 26)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock155" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 26)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock156" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock157" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 28)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock158" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 28)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock159" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 28)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock160" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 28)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock161" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 28)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock162" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 28)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock163" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 28)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock164" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 28)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock165" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 28)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock166" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 28)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock167" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 28)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock168" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 28)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock169" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 28)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock170" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 30)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock171" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 30)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock172" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 30)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock173" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 30)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock174" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 30)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock175" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 30)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock176" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 30)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock177" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 30)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock178" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 30)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock179" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock180" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock181" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock182" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock183" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock184" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock185" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock186" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock187" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock188" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock189" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock190" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock191" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock192" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock193" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock194" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 32)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock195" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 34)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock196" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 34)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock197" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 34)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock198" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 34)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock199" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 34)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock200" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 34)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock201" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+west_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock202" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock203" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock204" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock205" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock206" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock207" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock208" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock209" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock210" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock211" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock212" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock213" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock214" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock215" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock216" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock217" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+north_face = 0
+east_face = 0
+south_face = 0
+top_face = 0
+metadata/_custom_type_script = "uid://cymup6e7hhyak"
+
+[node name="LevelBlock218" type="Node3D" parent="Escenario/Block"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 36)
+script = ExtResource("1_gsvho")
+material = ExtResource("2_rsdve")
+texture_sheet = ExtResource("4_bdqi0")
+texture_size = 64.0
+east_face = 0
+south_face = 0
+west_face = 0
+top_face = 0
 metadata/_custom_type_script = "uid://cymup6e7hhyak"
 
 [node name="Regiones_Navegacion" type="Node3D" parent="Escenario"]
+visible = false
 
-[node name="0" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -2)
+[node name="Orig" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 36)
+mesh = SubResource("PlaneMesh_loqv1")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig"]
 navigation_mesh = SubResource("NavigationMesh_vbneo")
 
-[node name="1" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.6396866)
+[node name="Orig55" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 21)
+mesh = SubResource("PlaneMesh_3clh0")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig55"]
 navigation_mesh = SubResource("NavigationMesh_c5pe8")
+
+[node name="Orig54" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 12)
+mesh = SubResource("PlaneMesh_6nwpj")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig54"]
+navigation_mesh = SubResource("NavigationMesh_bdqi0")
+
+[node name="Orig45" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 18)
+mesh = SubResource("PlaneMesh_85gky")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig45"]
+navigation_mesh = SubResource("NavigationMesh_qdaua")
+
+[node name="Orig52" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 0)
+mesh = SubResource("PlaneMesh_85gky")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig52"]
+navigation_mesh = SubResource("NavigationMesh_0n2u1")
+
+[node name="Orig53" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 2)
+mesh = SubResource("PlaneMesh_qwqn4")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig53"]
+navigation_mesh = SubResource("NavigationMesh_byphd")
+
+[node name="Orig46" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 14)
+mesh = SubResource("PlaneMesh_kw3yb")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig46"]
+navigation_mesh = SubResource("NavigationMesh_3lx2r")
+
+[node name="Orig50" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 8)
+mesh = SubResource("PlaneMesh_kw3yb")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig50"]
+navigation_mesh = SubResource("NavigationMesh_fo4mv")
+
+[node name="Orig51" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 4)
+mesh = SubResource("PlaneMesh_kw3yb")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig51"]
+navigation_mesh = SubResource("NavigationMesh_4rymb")
+
+[node name="Orig47" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 10)
+mesh = SubResource("PlaneMesh_m1sbp")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig47"]
+navigation_mesh = SubResource("NavigationMesh_7qnba")
+
+[node name="Orig43" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 22)
+mesh = SubResource("PlaneMesh_73o11")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig43"]
+navigation_mesh = SubResource("NavigationMesh_qb8tl")
+
+[node name="Orig41" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, 22)
+mesh = SubResource("PlaneMesh_0n2u1")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig41"]
+navigation_mesh = SubResource("NavigationMesh_nydfm")
+
+[node name="Orig44" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 24)
+mesh = SubResource("PlaneMesh_0n2u1")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig44"]
+navigation_mesh = SubResource("NavigationMesh_noibu")
+
+[node name="Orig42" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 8)
+mesh = SubResource("PlaneMesh_0n2u1")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig42"]
+navigation_mesh = SubResource("NavigationMesh_q23sb")
+
+[node name="Orig38" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 8)
+mesh = SubResource("PlaneMesh_byphd")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig38"]
+navigation_mesh = SubResource("NavigationMesh_v7pov")
+
+[node name="Orig37" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 28)
+mesh = SubResource("PlaneMesh_3lx2r")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig37"]
+navigation_mesh = SubResource("NavigationMesh_p21nk")
+
+[node name="Orig36" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 18)
+mesh = SubResource("PlaneMesh_fo4mv")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig36"]
+navigation_mesh = SubResource("NavigationMesh_3vwto")
+
+[node name="Orig35" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 22)
+mesh = SubResource("PlaneMesh_4rymb")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig35"]
+navigation_mesh = SubResource("NavigationMesh_thpcs")
+
+[node name="Orig34" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 29)
+mesh = SubResource("PlaneMesh_7qnba")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig34"]
+navigation_mesh = SubResource("NavigationMesh_3dqdm")
+
+[node name="Orig33" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 27)
+mesh = SubResource("PlaneMesh_qb8tl")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig33"]
+navigation_mesh = SubResource("NavigationMesh_31dof")
+
+[node name="Orig32" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 32)
+mesh = SubResource("PlaneMesh_nydfm")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig32"]
+navigation_mesh = SubResource("NavigationMesh_xp11i")
+
+[node name="Orig31" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 22)
+mesh = SubResource("PlaneMesh_noibu")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig31"]
+navigation_mesh = SubResource("NavigationMesh_oamc2")
+
+[node name="Orig21" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+mesh = SubResource("PlaneMesh_q23sb")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig21"]
+navigation_mesh = SubResource("NavigationMesh_aw80t")
+
+[node name="Orig39" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 24)
+mesh = SubResource("PlaneMesh_q23sb")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig39"]
+navigation_mesh = SubResource("NavigationMesh_loqv1")
+
+[node name="Orig40" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 14)
+mesh = SubResource("PlaneMesh_q23sb")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig40"]
+navigation_mesh = SubResource("NavigationMesh_3clh0")
+
+[node name="Orig24" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+mesh = SubResource("PlaneMesh_q23sb")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig24"]
+navigation_mesh = SubResource("NavigationMesh_6nwpj")
+
+[node name="Orig23" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1)
+mesh = SubResource("PlaneMesh_v7pov")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig23"]
+navigation_mesh = SubResource("NavigationMesh_85gky")
+
+[node name="Orig27" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 1)
+mesh = SubResource("PlaneMesh_v7pov")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig27"]
+navigation_mesh = SubResource("NavigationMesh_qwqn4")
+
+[node name="Orig28" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 13)
+mesh = SubResource("PlaneMesh_v7pov")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig28"]
+navigation_mesh = SubResource("NavigationMesh_kw3yb")
+
+[node name="Orig22" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 6)
+mesh = SubResource("PlaneMesh_p21nk")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig22"]
+navigation_mesh = SubResource("NavigationMesh_m1sbp")
+
+[node name="Orig20" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 11)
+mesh = SubResource("PlaneMesh_3vwto")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig20"]
+navigation_mesh = SubResource("NavigationMesh_73o11")
+
+[node name="Orig19" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+mesh = SubResource("PlaneMesh_thpcs")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig19"]
+navigation_mesh = SubResource("NavigationMesh_15gtm")
+
+[node name="Orig18" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 28)
+mesh = SubResource("PlaneMesh_3dqdm")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig18"]
+navigation_mesh = SubResource("NavigationMesh_2furu")
+
+[node name="Orig17" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 28)
+mesh = SubResource("PlaneMesh_31dof")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig17"]
+navigation_mesh = SubResource("NavigationMesh_sundi")
+
+[node name="Orig11" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 32)
+mesh = SubResource("PlaneMesh_xp11i")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig11"]
+navigation_mesh = SubResource("NavigationMesh_l2jn7")
+
+[node name="Orig12" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 24)
+mesh = SubResource("PlaneMesh_xp11i")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig12"]
+navigation_mesh = SubResource("NavigationMesh_16wn6")
+
+[node name="Orig13" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 16)
+mesh = SubResource("PlaneMesh_xp11i")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig13"]
+navigation_mesh = SubResource("NavigationMesh_ssg27")
+
+[node name="Orig14" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 24)
+mesh = SubResource("PlaneMesh_xp11i")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig14"]
+navigation_mesh = SubResource("NavigationMesh_ugtjb")
+
+[node name="Orig15" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 26)
+mesh = SubResource("PlaneMesh_xp11i")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig15"]
+navigation_mesh = SubResource("NavigationMesh_56pck")
+
+[node name="Orig16" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 20)
+mesh = SubResource("PlaneMesh_xp11i")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig16"]
+navigation_mesh = SubResource("NavigationMesh_n00r5")
+
+[node name="Orig10" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 32)
+mesh = SubResource("PlaneMesh_oamc2")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig10"]
+navigation_mesh = SubResource("NavigationMesh_2k5pb")
+
+[node name="Orig6" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 33)
+mesh = SubResource("PlaneMesh_aw80t")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig6"]
+navigation_mesh = SubResource("NavigationMesh_s2jkd")
+
+[node name="Orig5" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 34)
+mesh = SubResource("PlaneMesh_vbneo")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig5"]
+navigation_mesh = SubResource("NavigationMesh_vjftg")
+
+[node name="Orig4" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 27)
+mesh = SubResource("PlaneMesh_c5pe8")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig4"]
+navigation_mesh = SubResource("NavigationMesh_obhjv")
+
+[node name="Orig3" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 22)
+mesh = SubResource("PlaneMesh_bdqi0")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig3"]
+navigation_mesh = SubResource("NavigationMesh_exhlu")
+
+[node name="Orig2" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 34)
+mesh = SubResource("PlaneMesh_qdaua")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig2"]
+navigation_mesh = SubResource("NavigationMesh_oar1g")
+
+[node name="Orig25" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 2)
+mesh = SubResource("PlaneMesh_qdaua")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig25"]
+navigation_mesh = SubResource("NavigationMesh_8uklf")
+
+[node name="Orig26" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 4)
+mesh = SubResource("PlaneMesh_15gtm")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig26"]
+navigation_mesh = SubResource("NavigationMesh_c22ig")
+
+[node name="Orig29" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 16)
+mesh = SubResource("PlaneMesh_qdaua")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig29"]
+navigation_mesh = SubResource("NavigationMesh_0rtno")
+
+[node name="Orig30" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, 16)
+mesh = SubResource("PlaneMesh_qdaua")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig30"]
+navigation_mesh = SubResource("NavigationMesh_ji6op")
+
+[node name="Orig7" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+mesh = SubResource("PlaneMesh_qdaua")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig7"]
+navigation_mesh = SubResource("NavigationMesh_3y6gb")
+
+[node name="Orig8" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 6)
+mesh = SubResource("PlaneMesh_qdaua")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig8"]
+navigation_mesh = SubResource("NavigationMesh_6wn4v")
+
+[node name="Orig9" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 20)
+mesh = SubResource("PlaneMesh_qdaua")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig9"]
+navigation_mesh = SubResource("NavigationMesh_cdojc")
+
+[node name="Orig48" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 6)
+mesh = SubResource("PlaneMesh_73o11")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig48"]
+navigation_mesh = SubResource("NavigationMesh_kat60")
+
+[node name="Orig49" type="MeshInstance3D" parent="Escenario/Regiones_Navegacion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 16)
+mesh = SubResource("PlaneMesh_85gky")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Escenario/Regiones_Navegacion/Orig49"]
+navigation_mesh = SubResource("NavigationMesh_nx4yk")
 
 [node name="Personaje" type="Node3D" parent="."]
 
 [node name="Rex" parent="Personaje" instance=ExtResource("4_c5pe8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 32, 0, 36)
 
 [node name="Player" parent="Personaje" groups=["player"] instance=ExtResource("4_gsvho")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 36)
 
 [node name="GUI" parent="." instance=ExtResource("5_vbneo")]
 
