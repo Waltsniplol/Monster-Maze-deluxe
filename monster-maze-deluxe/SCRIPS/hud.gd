@@ -14,10 +14,15 @@ func _process(delta: float) -> void:
 			$IndRex/Text.text = "Rex te esta Buscando"
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel") && !$Audio/Jumpscare.playing:
 		_on_reanudar_pressed()
 
 func _on_rex_gamo_over() -> void: #Esta Funcion es llamada por una cenal cuando el personaje muere
+	$Audio/Jumpscare.process_mode = Node.PROCESS_MODE_ALWAYS
+	$Audio/Jumpscare.play()
+	get_tree().paused = true
+	await $Audio/Jumpscare.finished
+	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 #Menu de Pausa {

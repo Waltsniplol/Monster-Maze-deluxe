@@ -14,7 +14,10 @@ const Dialogos : Dictionary = { #Lineas De Dialogos , Expreciones
 			"So… what do you say?",
 			"Are you ready to meet 'REX'?"]
 		,
-		["Tranquilo","Tranquilo","Tranquilo","Tranquilo","Tranquilo","Tranquilo","Tranquilo"]]
+		["Tranquilo","Tranquilo","Tranquilo","Tranquilo","Tranquilo","Tranquilo","Tranquilo"]],
+	1: 
+		[["Oh Sobreviviste","Que Bien","Quieres Probar en Otro Laberinto"],
+		["Tranquilo","Tranquilo","Tranquilo"]]
 }
 
 var lines : Array #En que linea es que esta los

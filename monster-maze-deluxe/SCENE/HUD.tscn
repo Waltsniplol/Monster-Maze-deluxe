@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cp5g0sd7lsm0u"]
+[gd_scene load_steps=8 format=3 uid="uid://cp5g0sd7lsm0u"]
 
 [ext_resource type="Script" uid="uid://bmli8io0mtwe" path="res://SCRIPS/hud.gd" id="1_5jn2j"]
 [ext_resource type="Texture2D" uid="uid://bth6bu3lggnij" path="res://TEXTURE/SCORE.png" id="1_vmajl"]
 [ext_resource type="FontFile" uid="uid://cvh5ag78ds88y" path="res://FONTS/Minecraft.ttf" id="2_ubqyb"]
 [ext_resource type="PackedScene" uid="uid://c6lw23jo0vn77" path="res://SCENE/settings.tscn" id="4_5yg0y"]
 [ext_resource type="Texture2D" uid="uid://83p23uui8o1c" path="res://icon.svg" id="4_26ddd"]
+[ext_resource type="AudioStream" uid="uid://7lpcf7wc85a8" path="res://SONG/SCREAMER.ogg" id="6_26ddd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vmajl"]
 font = ExtResource("2_ubqyb")
@@ -150,8 +151,11 @@ layout_mode = 1
 [node name="Audio" type="Node" parent="."]
 
 [node name="Musica" type="AudioStreamPlayer" parent="Audio"]
+bus = &"Musica"
 
 [node name="Jumpscare" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("6_26ddd")
+bus = &"Efectos"
 
 [connection signal="pressed" from="Menu_Pausa/Botones/Reanudar" to="." method="_on_reanudar_pressed"]
 [connection signal="pressed" from="Menu_Pausa/Botones/Ajustes" to="." method="_on_ajustes_pressed"]
