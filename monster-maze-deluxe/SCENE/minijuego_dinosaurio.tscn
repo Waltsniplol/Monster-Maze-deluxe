@@ -1,0 +1,417 @@
+[gd_scene load_steps=18 format=3 uid="uid://c4ihvrwxx1y5c"]
+
+[ext_resource type="Script" uid="uid://dhdoixu37n16y" path="res://SCRIPS/Minijuego/minijuego_dinosaurio.gd" id="1_phr88"]
+[ext_resource type="Script" uid="uid://3fihqbowqa0c" path="res://SCRIPS/Minijuego/player.gd" id="2_d5jhn"]
+[ext_resource type="Texture2D" uid="uid://83p23uui8o1c" path="res://icon.svg" id="2_gaugo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5jhn"]
+size = Vector2(320, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k2r24"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gaugo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ctff"]
+size = Vector2(19, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8eqlq"]
+size = Vector2(16, 40)
+
+[sub_resource type="Animation" id="Animation_xtej0"]
+resource_name = "0"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.133, 0.329)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Coll:shape")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_8eqlq")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Coll:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gaugo"]
+size = Vector2(26, 40)
+
+[sub_resource type="Animation" id="Animation_6u7kt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.133, 0.329)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Coll:shape")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_gaugo")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Coll:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_raebh"]
+size = Vector2(38, 22)
+
+[sub_resource type="Animation" id="Animation_6ccol"]
+resource_name = "1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.29687476, 0.17231259)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Coll:shape")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_raebh")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 11)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Coll:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 11)]
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4dyc"]
+
+[sub_resource type="Animation" id="Animation_wp33c"]
+resource_name = "2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Coll:shape")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_x4dyc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.1718749, 0.17231259)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Coll:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 11)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 11)]
+}
+
+[sub_resource type="Animation" id="Animation_1ctnh"]
+resource_name = "3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Coll:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Coll:shape")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_gaugo")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.21874987, 0.329)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.21593475e-05, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xwlgt"]
+_data = {
+&"0": SubResource("Animation_xtej0"),
+&"1": SubResource("Animation_6ccol"),
+&"2": SubResource("Animation_wp33c"),
+&"3": SubResource("Animation_1ctnh"),
+&"RESET": SubResource("Animation_6u7kt")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2r24"]
+size = Vector2(20, 220)
+
+[node name="Minijuego_Dinosaurio" type="Node2D"]
+script = ExtResource("1_phr88")
+
+[node name="Escenario" type="Node2D" parent="."]
+
+[node name="Paralax" type="ParallaxBackground" parent="Escenario"]
+
+[node name="Parallax2D" type="Parallax2D" parent="Escenario/Paralax"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Escenario/Paralax/Parallax2D"]
+
+[node name="Suelo" type="StaticBody2D" parent="Escenario"]
+position = Vector2(160, 230)
+
+[node name="Coll" type="CollisionShape2D" parent="Escenario/Suelo"]
+shape = SubResource("RectangleShape2D_d5jhn")
+
+[node name="Obj" type="Node2D" parent="."]
+
+[node name="Player" type="CharacterBody2D" parent="Obj" groups=["Player"]]
+position = Vector2(85, 204)
+script = ExtResource("2_d5jhn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Obj/Player"]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_k2r24")
+
+[node name="Coll" type="CollisionShape2D" parent="Obj/Player"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_3ctff")
+
+[node name="Salto" type="AudioStreamPlayer" parent="Obj/Player"]
+bus = &"Efectos"
+
+[node name="Obstaculo" type="Area2D" parent="Obj"]
+position = Vector2(334, 199)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Obj/Obstaculo"]
+libraries = {
+&"": SubResource("AnimationLibrary_xwlgt")
+}
+
+[node name="Sprite" type="Sprite2D" parent="Obj/Obstaculo"]
+scale = Vector2(0.133, 0.329)
+texture = ExtResource("2_gaugo")
+
+[node name="Coll" type="CollisionShape2D" parent="Obj/Obstaculo"]
+shape = SubResource("RectangleShape2D_gaugo")
+
+[node name="Salto_Logrado" type="Area2D" parent="Obj/Obstaculo"]
+position = Vector2(41, 11)
+
+[node name="Coll" type="CollisionShape2D" parent="Obj/Obstaculo/Salto_Logrado"]
+position = Vector2(0, -100)
+shape = SubResource("RectangleShape2D_k2r24")
+
+[node name="Camara" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 320
+limit_bottom = 240
+
+[node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Puntos" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -143.0
+offset_bottom = 23.0
+grow_horizontal = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxPuntos" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -143.0
+offset_top = 25.0
+offset_bottom = 48.0
+grow_horizontal = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Game_Over" type="VBoxContainer" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -33.0
+offset_right = 45.5
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Reintentar" type="Button" parent="UI/Game_Over"]
+layout_mode = 2
+text = "Reintentar"
+
+[node name="Salir" type="Button" parent="UI/Game_Over"]
+layout_mode = 2
+text = "Salir"
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Musica" type="AudioStreamPlayer" parent="Audio"]
+
+[connection signal="body_entered" from="Obj/Obstaculo" to="." method="_on_obstaculo_body_entered"]
+[connection signal="body_entered" from="Obj/Obstaculo/Salto_Logrado" to="." method="_on_salto_logrado_body_entered"]
+[connection signal="pressed" from="UI/Game_Over/Reintentar" to="." method="_on_reintentar_pressed"]
+[connection signal="pressed" from="UI/Game_Over/Salir" to="." method="_on_salir_pressed"]

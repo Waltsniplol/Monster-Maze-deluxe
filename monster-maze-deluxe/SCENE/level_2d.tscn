@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch438ti2bgccq"]
+
+[ext_resource type="Script" uid="uid://bq5assbwowwfs" path="res://SCRIPS/player2D.gd" id="1_38sd3"]
+[ext_resource type="Texture2D" uid="uid://83p23uui8o1c" path="res://icon.svg" id="2_7wrf3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hn4am"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7wrf3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4c4m7"]
+radius = 17.117243
+
+[node name="Level2D" type="Node2D"]
+
+[node name="Escenario" type="Node2D" parent="."]
+
+[node name="Obj" type="Node2D" parent="."]
+
+[node name="Player" type="CharacterBody2D" parent="Obj"]
+position = Vector2(148, 98)
+script = ExtResource("1_38sd3")
+
+[node name="Anim" type="AnimatedSprite2D" parent="Obj/Player"]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_hn4am")
+
+[node name="Coll" type="CollisionShape2D" parent="Obj/Player"]
+shape = SubResource("CircleShape2D_4c4m7")
+
+[node name="Ray" type="RayCast2D" parent="Obj/Player"]
+target_position = Vector2(0, 30)
